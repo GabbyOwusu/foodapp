@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/widgets/FoodCarosel.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -6,17 +7,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  double viewPortFraction = 0.85;
-
-  PageController controller;
-  int currentPage = 1;
+  List<String> list = [
+    "Food",
+    "Sugar",
+    "FuFu",
+  ];
+  PageController controller = PageController(
+    initialPage: 1,
+    viewportFraction: 0.85,
+  );
+  int currentPage;
 
   void initState() {
     super.initState();
-    controller = PageController(
-      initialPage: currentPage,
-      viewportFraction: viewPortFraction,
-    );
+    controller.addListener(() {
+      int next = controller.page.round();
+
+      if (currentPage != next) {
+        setState(() {
+          currentPage = next;
+        });
+      }
+    });
   }
 
   @override
@@ -24,101 +36,101 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.blue,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(top: 20),
-                    child: Container(
-                      height: 50,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(30),
-                          border: Border.all(
-                              color: Colors.white.withOpacity(0.5), width: 2)),
-                      child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'ASAP',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
+        child: Stack(
+          children: <Widget>[
+            SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              child: Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Container(
+                          height: 50,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(
+                                  color: Colors.white.withOpacity(0.5),
+                                  width: 2)),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'ASAP',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                IconButton(
+                                    icon: Icon(Icons.arrow_forward),
+                                    color: Colors.white,
+                                    iconSize: 20,
+                                    onPressed: () {}),
+                                Text(
+                                  'Work',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
                             ),
-                            IconButton(
-                                icon: Icon(Icons.arrow_forward),
-                                color: Colors.white,
-                                iconSize: 20,
-                                onPressed: () {}),
-                            Text(
-                              'Work',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                      Container(
+                        height: 800,
+                        child: PageView.builder(
+                            physics: BouncingScrollPhysics(),
+                            pageSnapping: true,
+                            controller: controller,
+                            itemCount: list.length,
+                            //ignore: missing_return
+                            itemBuilder: (context, index) {
+                              if (index == currentPage) {
+                                bool active = index == currentPage;
+                                return FoodCarousel(
+                                  active: active,
+                                );
+                              } else if (list.length >= index) {
+                                return FoodCarousel(
+                                  active: false,
+                                );
+                              }
+                            }),
+                      )
+                    ],
                   ),
-                  Container(
-                    height: 800,
-                    child: PageView.builder(
-                      physics: BouncingScrollPhysics(),
-                      pageSnapping: true,
-                      controller: controller,
-                      itemCount: 3,
-                      itemBuilder: (context, index) => ListView(
-                        scrollDirection: Axis.vertical,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(top: 50),
-                            child: CircleAvatar(
-                              radius: 50,
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(left: 15, right: 15, top: 30),
-                            child: Container(
-                              padding: EdgeInsets.all(20),
-                              height: 600,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(20),
-                                      topRight: Radius.circular(20))),
-                              child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    height: 250,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
             ),
-          ),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 50),
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                        child: Text(
+                      'Order from here',
+                      style: TextStyle(color: Colors.white),
+                    )),
+                  ),
+                ))
+          ],
         ),
       ),
     );
