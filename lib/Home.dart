@@ -6,10 +6,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  PageController controller = PageController(
-    initialPage: 0,
-    viewportFraction: 0.85,
-  );
+  double viewPortFraction = 0.85;
+
+  PageController controller;
+  int currentPage = 1;
+
+  void initState() {
+    super.initState();
+    controller = PageController(
+      initialPage: currentPage,
+      viewportFraction: viewPortFraction,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     height: 800,
                     child: PageView.builder(
+                      physics: BouncingScrollPhysics(),
                       pageSnapping: true,
                       controller: controller,
                       itemCount: 3,
