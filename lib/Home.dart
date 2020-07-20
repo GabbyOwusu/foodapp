@@ -10,16 +10,6 @@ class _MyHomePageState extends State<MyHomePage> {
     initialPage: 0,
     viewportFraction: 0.5,
   );
-  // @override
-  // void initState() {
-  //   super.initState();
-  // }
-
-  // @override
-  // void dispose() {
-  //   controller.dispose();
-  //   super.dispose();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: EdgeInsets.only(top: 20),
                     child: Container(
-                      //padding: EdgeInsets.all(10),
                       height: 50,
                       width: 200,
                       decoration: BoxDecoration(
