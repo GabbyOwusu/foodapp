@@ -12,6 +12,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Sugar",
     "FuFu",
   ];
+
   PageController controller = PageController(
     initialPage: 1,
     viewportFraction: 0.85,
@@ -34,14 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      // backgroundColor: Colors.red,
       body: SafeArea(
         child: Stack(
           children: <Widget>[
             SingleChildScrollView(
               physics: NeverScrollableScrollPhysics(),
               child: Center(
-                child: Container(
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
                   decoration: BoxDecoration(
                     color: Colors.blue,
                   ),
@@ -53,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           height: 50,
                           width: 200,
                           decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: Colors.transparent,
                               borderRadius: BorderRadius.circular(30),
                               border: Border.all(
                                   color: Colors.white.withOpacity(0.5),
