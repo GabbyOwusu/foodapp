@@ -8,7 +8,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PageController controller = PageController(
     initialPage: 0,
-    viewportFraction: 0.5,
+    viewportFraction: 0.85,
   );
 
   @override
@@ -66,9 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     height: 800,
                     child: PageView.builder(
+                      pageSnapping: true,
                       controller: controller,
                       itemCount: 3,
-                      itemBuilder: (context, index) => Column(
+                      itemBuilder: (context, index) => ListView(
+                        scrollDirection: Axis.vertical,
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.only(top: 50),
@@ -78,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsets.only(left: 10, right: 10, top: 30),
+                                EdgeInsets.only(left: 15, right: 15, top: 30),
                             child: Container(
                               padding: EdgeInsets.all(20),
                               height: 600,
