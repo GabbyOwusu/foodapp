@@ -128,7 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Center(
                         child: Text(
                       'Order from here',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w600),
                     )),
                   ),
                 ))
