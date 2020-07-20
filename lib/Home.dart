@@ -63,93 +63,45 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 50),
-                    child: CircleAvatar(
-                      radius: 50,
-                    ),
-                  ),
                   Container(
                     height: 800,
-                    child: PageView(
+                    child: PageView.builder(
                       controller: controller,
-                      //physics: ,
-                      children: <Widget>[
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 10, right: 10, top: 30),
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            height: 600,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20))),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  height: 250,
-                                  decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                )
-                              ],
+                      itemCount: 3,
+                      itemBuilder: (context, index) => Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(top: 50),
+                            child: CircleAvatar(
+                              radius: 50,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 10, right: 10, top: 30),
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            height: 600,
-                            // width: 500,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20))),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  height: 250,
-                                  decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                )
-                              ],
+                          Padding(
+                            padding:
+                                EdgeInsets.only(left: 10, right: 10, top: 30),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              height: 600,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20))),
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    height: 250,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 10, right: 10, top: 30),
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            height: 600,
-                            // width: 500,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20))),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  height: 250,
-                                  decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],
