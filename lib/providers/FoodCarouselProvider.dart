@@ -7,8 +7,23 @@ class CardProvider extends BaseProvider {
     return <FoodCard>[
       FoodCard(
           color: Colors.red,
-          title: 'KFC',
-          headingImage: 'images/food.png',
+          // title: 'KFC',
+          headingImage: 'images/kfc.png',
+          image: 'images/food.png'),
+      FoodCard(
+          color: Colors.red,
+          // title: 'KFC',
+          headingImage: 'images/kfc.png',
+          image: 'images/food.png'),
+      FoodCard(
+          color: Colors.red,
+          // title: 'KFC',
+          headingImage: 'images/kfc.png',
+          image: 'images/food.png'),
+      FoodCard(
+          color: Colors.red,
+          // title: 'KFC',
+          headingImage: 'images/kfc.png',
           image: 'images/food.png'),
     ];
   }
