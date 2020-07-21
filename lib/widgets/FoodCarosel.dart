@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/screens/DetailsPage.dart';
+import 'package:provider/provider.dart';
+import 'package:order_food/models/FoodCarouselCard.dart';
 
-class FoodCarousel extends StatelessWidget {
+class FoodCarousel extends StatefulWidget {
   final bool active;
+  final FoodCard foodCard;
+  FoodCarousel({this.active, this.foodCard});
 
-  FoodCarousel({this.active});
+  @override
+  _FoodCarouselState createState() => _FoodCarouselState();
+}
 
+class _FoodCarouselState extends State<FoodCarousel> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -16,16 +24,12 @@ class FoodCarousel extends StatelessWidget {
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
           curve: Curves.easeInOutQuint,
-          height: active ? 0 : 80,
+          height: widget.active ? 0 : 80,
         ),
         Padding(
           padding: EdgeInsets.only(top: 30),
           child: SizedBox(
-            height: 100,
-            child: Image(
-              image: AssetImage('images/starbucks.png'),
-            ),
-          ),
+              height: 100, child: Image.asset(widget.foodCard.headingImage)),
         ),
         Padding(
           padding: EdgeInsets.only(left: 10, right: 10, top: 30),
@@ -47,6 +51,8 @@ class FoodCarousel extends StatelessWidget {
                   Container(
                     height: 250,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(widget.foodCard.image)),
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(20),
                     ),
