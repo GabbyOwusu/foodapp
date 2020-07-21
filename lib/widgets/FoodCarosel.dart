@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/screens/DetailsPage.dart';
-import 'package:provider/provider.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
 
 class FoodCarousel extends StatefulWidget {
   final bool active;
   final FoodCard foodCard;
-  FoodCarousel({this.active, this.foodCard});
+  FoodCarousel({this.foodCard, this.active});
 
   @override
   _FoodCarouselState createState() => _FoodCarouselState();
@@ -53,7 +51,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(widget.foodCard.image)),
-                      color: Colors.blue,
+                      color: widget.foodCard.color,
                       borderRadius: BorderRadius.circular(20),
                     ),
                   )
