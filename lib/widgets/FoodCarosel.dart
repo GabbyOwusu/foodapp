@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/DetailsPage.dart';
 
-class FoodCarousel extends StatefulWidget {
+class FoodCarousel extends StatelessWidget {
   final bool active;
-  final String image;
 
-  FoodCarousel({this.active, this.image});
+  FoodCarousel({this.active});
 
-  @override
-  _FoodCarouselState createState() => _FoodCarouselState();
-}
-
-class _FoodCarouselState extends State<FoodCarousel> {
-  // List<String> images = [
+  // final List<String> images = [
   //   'kfc.png',
   //   'starbucks.png',
   //   'subway.png',
@@ -28,14 +22,14 @@ class _FoodCarouselState extends State<FoodCarousel> {
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
           curve: Curves.easeInOutQuint,
-          height: widget.active ? 0 : 80,
+          height: active ? 0 : 80,
         ),
         Padding(
           padding: EdgeInsets.only(top: 30),
           child: SizedBox(
             height: 100,
             child: Image(
-              image: AssetImage(widget.image),
+              image: AssetImage('images/starbucks.png'),
             ),
           ),
         ),
