@@ -3,12 +3,21 @@ import 'package:order_food/DetailsPage.dart';
 
 class FoodCarousel extends StatefulWidget {
   final bool active;
-  FoodCarousel({this.active});
+  final String image;
+
+  FoodCarousel({this.active, this.image});
+
   @override
   _FoodCarouselState createState() => _FoodCarouselState();
 }
 
 class _FoodCarouselState extends State<FoodCarousel> {
+  // List<String> images = [
+  //   'kfc.png',
+  //   'starbucks.png',
+  //   'subway.png',
+  // ];
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -23,8 +32,11 @@ class _FoodCarouselState extends State<FoodCarousel> {
         ),
         Padding(
           padding: EdgeInsets.only(top: 30),
-          child: CircleAvatar(
-            radius: 50,
+          child: SizedBox(
+            height: 100,
+            child: Image(
+              image: AssetImage(widget.image),
+            ),
           ),
         ),
         Padding(
