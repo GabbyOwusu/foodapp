@@ -103,17 +103,17 @@ class _MyHomePageState extends State<MyHomePage> {
                             itemCount: provider.items.length,
                             //ignore: missing_return
                             itemBuilder: (context, index) {
-                              // if (index == currentPage) {
-                              //   bool active = index == currentPage;
-                              return FoodCarousel(
-                                active: true,
-                              );
-                              // } else if (provider.items.length >= index) {
-                              //   return FoodCarousel(
-                              //     foodCard: provider.items[index],
-                              //     active: false,
-                              //   );
-                              // }
+                              if (index == currentPage) {
+                                bool active = index == currentPage;
+                                return FoodCarousel(
+                                  active: active,
+                                );
+                              } else if (provider.items.length >= index) {
+                                return FoodCarousel(
+                                  foodCard: provider.items[index],
+                                  active: true,
+                                );
+                              }
                             }),
                       ),
                     ],
