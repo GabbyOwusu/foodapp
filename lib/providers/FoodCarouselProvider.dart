@@ -8,7 +8,7 @@ class CardProvider extends BaseProvider {
       FoodCard(
           color: Colors.red,
           title: 'KFC',
-          headingImage: 'images/kfc.png',
+          headingImage: 'images/food.png',
           image: 'images/food.png'),
     ];
   }
