@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
+import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/widgets/FoodCarosel.dart';
+import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -30,6 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
         });
       }
     });
+  }
+
+  CardProvider get provider {
+    return Provider.of<CardProvider>(context);
   }
 
   @override
@@ -93,19 +100,20 @@ class _MyHomePageState extends State<MyHomePage> {
                             physics: BouncingScrollPhysics(),
                             pageSnapping: true,
                             controller: controller,
-                            itemCount: list.length,
+                            itemCount: provider.items.length,
                             //ignore: missing_return
                             itemBuilder: (context, index) {
-                              if (index == currentPage) {
-                                bool active = index == currentPage;
-                                return FoodCarousel(
-                                  active: active,
-                                );
-                              } else if (list.length >= index) {
-                                return FoodCarousel(
-                                  active: false,
-                                );
-                              }
+                              // if (index == currentPage) {
+                              //   bool active = index == currentPage;
+                              return FoodCarousel(
+                                active: true,
+                              );
+                              // } else if (provider.items.length >= index) {
+                              //   return FoodCarousel(
+                              //     foodCard: provider.items[index],
+                              //     active: false,
+                              //   );
+                              // }
                             }),
                       ),
                     ],
