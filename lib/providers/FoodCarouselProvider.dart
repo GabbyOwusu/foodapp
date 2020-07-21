@@ -7,24 +7,24 @@ class CardProvider extends BaseProvider {
     return <FoodCard>[
       FoodCard(
           color: Colors.red,
-          // title: 'KFC',
+          title: 'KFC',
           headingImage: 'images/kfc.png',
           image: 'images/food.png'),
-      FoodCard(
-          color: Colors.red,
-          // title: 'KFC',
-          headingImage: 'images/kfc.png',
-          image: 'images/food.png'),
-      FoodCard(
-          color: Colors.red,
-          // title: 'KFC',
-          headingImage: 'images/kfc.png',
-          image: 'images/food.png'),
-      FoodCard(
-          color: Colors.red,
-          // title: 'KFC',
-          headingImage: 'images/kfc.png',
-          image: 'images/food.png'),
+      // FoodCard(
+      //     color: Colors.red,
+      //     title: 'KFC',
+      //     headingImage: 'images/kfc.png',
+      //     image: 'images/food.png'),
+      // FoodCard(
+      //     color: Colors.red,
+      //     title: 'KFC',
+      //     headingImage: 'images/kfc.png',
+      //     image: 'images/food.png'),
+      // FoodCard(
+      //     color: Colors.red,
+      //     title: 'KFC',
+      //     headingImage: 'images/kfc.png',
+      //     image: 'images/food.png'),
     ];
   }
 }
