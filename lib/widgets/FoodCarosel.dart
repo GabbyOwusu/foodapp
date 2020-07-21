@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/DetailsPage.dart';
 
 class FoodCarousel extends StatefulWidget {
   final bool active;
@@ -16,38 +17,42 @@ class _FoodCarouselState extends State<FoodCarousel> {
       scrollDirection: Axis.vertical,
       children: <Widget>[
         AnimatedContainer(
-          duration: Duration(milliseconds: 300),
+          duration: Duration(milliseconds: 200),
           curve: Curves.easeInOutQuint,
-          height: widget.active ? 0 : 100,
+          height: widget.active ? 0 : 80,
         ),
         Padding(
-          padding: EdgeInsets.only(top: 50),
+          padding: EdgeInsets.only(top: 30),
           child: CircleAvatar(
             radius: 50,
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 15, right: 15, top: 30),
-          child: Container(
-            // curve: Curves.easeInOutQuint,
-            // duration: Duration(microseconds: 500),
-            padding: EdgeInsets.all(20),
-            height: 800,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20))),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                )
-              ],
+          padding: EdgeInsets.only(left: 10, right: 10, top: 30),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Details()));
+            },
+            child: Container(
+              padding: EdgeInsets.all(20),
+              height: 800,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20))),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 250,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
