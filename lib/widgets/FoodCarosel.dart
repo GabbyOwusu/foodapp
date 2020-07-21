@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/DetailsPage.dart';
+import 'package:order_food/screens/DetailsPage.dart';
 
 class FoodCarousel extends StatelessWidget {
   final bool active;
 
   FoodCarousel({this.active});
-
-  // final List<String> images = [
-  //   'kfc.png',
-  //   'starbucks.png',
-  //   'subway.png',
-  // ];
 
   @override
   Widget build(BuildContext context) {
