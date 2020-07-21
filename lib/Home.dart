@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: <Widget>[
             SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
+              // physics: NeverScrollableScrollPhysics(),
               child: Center(
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 300),
@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 );
                               }
                             }),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -120,16 +120,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 50),
                   child: Container(
-                    height: 50,
-                    width: 200,
+                    height: 60,
+                    width: 250,
                     decoration: BoxDecoration(
                         color: Colors.black,
-                        borderRadius: BorderRadius.circular(30)),
+                        borderRadius: BorderRadius.circular(50)),
                     child: Center(
                         child: Text(
                       'Order from here',
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w600),
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal),
                     )),
                   ),
                 ))
