@@ -8,9 +8,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<String> list = [
-    "Food",
-    "Sugar",
-    "FuFu",
+    'kfc.png',
+    'starbucks.png',
+    'subway.png',
   ];
 
   PageController controller = PageController(
@@ -35,12 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.red,
       body: SafeArea(
         child: Stack(
           children: <Widget>[
             SingleChildScrollView(
-              // physics: NeverScrollableScrollPhysics(),
               child: Center(
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 300),
@@ -102,10 +100,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 bool active = index == currentPage;
                                 return FoodCarousel(
                                   active: active,
+                                  image: list[index],
                                 );
                               } else if (list.length >= index) {
                                 return FoodCarousel(
                                   active: false,
+                                  image: list[index],
                                 );
                               }
                             }),
