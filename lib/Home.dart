@@ -10,11 +10,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> list = [
-    'kfc.png',
-    'starbucks.png',
-    'subway.png',
-  ];
+  // List<String> list = [
+  //   'kfc.png',
+  //   'starbucks.png',
+  //   'subway.png',
+  // ];
 
   PageController controller = PageController(
     initialPage: 1,
@@ -24,6 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
+
     controller.addListener(() {
       int next = controller.page.round();
 
