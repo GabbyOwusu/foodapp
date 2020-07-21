@@ -104,14 +104,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             //ignore: missing_return
                             itemBuilder: (context, index) {
                               if (index == currentPage) {
-                                bool active = index == currentPage;
                                 return FoodCarousel(
-                                  active: active,
+                                  active: false,
                                 );
                               } else if (provider.items.length >= index) {
+                                bool active = index == currentPage;
                                 return FoodCarousel(
                                   foodCard: provider.items[index],
-                                  active: true,
+                                  active: active,
                                 );
                               }
                             }),
