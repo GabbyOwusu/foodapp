@@ -100,12 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                 bool active = index == currentPage;
                                 return FoodCarousel(
                                   active: active,
-                                  image: list[index],
                                 );
                               } else if (list.length >= index) {
                                 return FoodCarousel(
                                   active: false,
-                                  image: list[index],
                                 );
                               }
                             }),
