@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/Home.dart';
+import 'package:order_food/providers/FoodCarouselProvider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,13 +10,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Order Food',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => CardProvider())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Order Food',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyHomePage(),
       ),
-      home: MyHomePage(),
     );
   }
 }
