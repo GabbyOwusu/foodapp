@@ -6,6 +6,7 @@ class FoodCarousel extends StatefulWidget {
   final String tag = 'hello';
   final bool active;
   final FoodCard foodCard;
+
   FoodCarousel({@required this.foodCard, this.active});
 
   @override
@@ -20,6 +21,9 @@ class _FoodCarouselState extends State<FoodCarousel> {
       physics: NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       children: <Widget>[
+        SizedBox(
+          height: 60,
+        ),
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
           curve: Curves.easeInOutQuint,
