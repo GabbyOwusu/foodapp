@@ -13,13 +13,13 @@ class CardProvider extends BaseProvider {
       FoodCard(
           color: Colors.red,
           title: 'KFC',
-          headingImage: 'images/kfc.png',
+          headingImage: 'images/starbucks.png',
           image: 'images/food.png'),
       FoodCard(
           color: Colors.red,
           title: 'KFC',
-          headingImage: 'images/kfc.png',
-          image: 'images/food.png'),
+          headingImage: 'images/subway.png',
+          image: 'images/subwayfood.png'),
       FoodCard(
           color: Colors.red,
           title: 'KFC',
