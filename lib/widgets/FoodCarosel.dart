@@ -21,11 +21,9 @@ class _FoodCarouselState extends State<FoodCarousel> {
       physics: NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       children: <Widget>[
-        SizedBox(
-          height: 60,
-        ),
+        SizedBox(height: 60),
         AnimatedContainer(
-          duration: Duration(milliseconds: 200),
+          duration: Duration(milliseconds: 300),
           curve: Curves.easeInOutQuint,
           height: widget.active ? 0 : 80,
         ),
