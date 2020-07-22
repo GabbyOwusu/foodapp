@@ -16,6 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   );
   int currentPage;
   FoodCard foodCard;
+  Color color;
 
   void initState() {
     super.initState();
@@ -47,13 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 300),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(251, 84, 71, 1),
+                    color: color,
                   ),
                   child: Column(
                     children: <Widget>[
                       Container(
                         height: 800,
                         child: PageView.builder(
+                            onPageChanged: (value) {
+                              setState(() {
+                                color = foodCard.color;
+                              });
+                            },
                             physics: BouncingScrollPhysics(),
                             pageSnapping: true,
                             controller: controller,
