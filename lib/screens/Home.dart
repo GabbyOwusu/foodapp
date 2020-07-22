@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     viewportFraction: 0.85,
   );
   int currentPage;
-  FoodCard foodCard;
+
   Color color;
 
   void initState() {
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   CardProvider get provider {
-    return Provider.of<CardProvider>(context);
+    return Provider.of<CardProvider>(context, listen: false);
   }
 
   @override
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: PageView.builder(
                             onPageChanged: (value) {
                               setState(() {
-                                color = foodCard.color;
+                                color = provider.items[value].color;
                               });
                             },
                             physics: BouncingScrollPhysics(),
