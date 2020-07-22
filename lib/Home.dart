@@ -10,12 +10,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // List<String> list = [
-  //   'kfc.png',
-  //   'starbucks.png',
-  //   'subway.png',
-  // ];
-
   PageController controller = PageController(
     initialPage: 1,
     viewportFraction: 0.85,
@@ -47,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: <Widget>[
             SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
               child: Center(
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 300),
@@ -105,14 +100,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             //ignore: missing_return
                             itemBuilder: (context, index) {
                               if (index == currentPage) {
-                                return FoodCarousel(
-                                  active: false,
-                                );
-                              } else if (provider.items.length >= index) {
                                 bool active = index == currentPage;
                                 return FoodCarousel(
                                   foodCard: provider.items[index],
                                   active: active,
+                                );
+                              } else if (provider.items.length >= index) {
+                                return FoodCarousel(
+                                  foodCard: provider.items[index],
+                                  active: false,
                                 );
                               }
                             }),
