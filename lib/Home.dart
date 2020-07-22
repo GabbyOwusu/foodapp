@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 50),
+                  padding: EdgeInsets.only(bottom: 30),
                   child: Container(
                     height: 60,
                     width: 250,
