@@ -5,7 +5,7 @@ import 'package:order_food/models/FoodCarouselCard.dart';
 class FoodCarousel extends StatefulWidget {
   final bool active;
   final FoodCard foodCard;
-  FoodCarousel({this.foodCard, this.active});
+  FoodCarousel({@required this.foodCard, this.active});
 
   @override
   _FoodCarouselState createState() => _FoodCarouselState();
