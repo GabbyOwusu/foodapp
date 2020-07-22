@@ -27,7 +27,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
           AnimatedContainer(
             duration: Duration(milliseconds: 300),
             curve: Curves.easeInOutQuint,
-            height: widget.active ? 0 : 80,
+            height: widget.active ? 0 : 200,
           ),
           Padding(
             padding: EdgeInsets.only(top: 30),
@@ -57,14 +57,62 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 250,
+                      height: 270,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage(widget.foodCard.image)),
                         color: widget.foodCard.color,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      widget.foodCard.title,
+                      style: TextStyle(
+                        fontFamily: 'SanFransisco',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 25,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 18,
+                        ),
+                        Text(
+                          '4.8',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.grey.withOpacity(0.5)),
+                        ),
+                        Text(
+                          'Burgers American',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.grey.withOpacity(0.5)),
+                        ),
+                        Text(
+                          'Dollars',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.grey.withOpacity(0.5)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    Text(
+                      '10 - 15 min',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ),
