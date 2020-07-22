@@ -11,7 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   PageController controller = PageController(
-    initialPage: 1,
+    initialPage: 2,
     viewportFraction: 0.85,
   );
   int currentPage;
