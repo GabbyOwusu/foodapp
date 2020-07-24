@@ -7,7 +7,10 @@ class FoodCarousel extends StatefulWidget {
   final bool active;
   final FoodCard foodCard;
 
-  FoodCarousel({@required this.foodCard, this.active});
+  FoodCarousel({
+    @required this.foodCard,
+    this.active,
+  });
 
   @override
   _FoodCarouselState createState() => _FoodCarouselState();
@@ -72,7 +75,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                       widget.foodCard.title,
                       style: TextStyle(
                         fontFamily: 'SanFransisco',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
                         fontSize: 25,
                       ),
                     ),
