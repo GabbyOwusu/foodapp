@@ -23,11 +23,8 @@ class _DetailsState extends State<Details> {
                 centerTitle: true,
                 title: Padding(
                   padding: EdgeInsets.only(top: 50),
-                  child: Hero(
-                    tag: widget.tag,
-                    child: CircleAvatar(
-                      radius: 50,
-                    ),
+                  child: CircleAvatar(
+                    radius: 50,
                   ),
                 ),
               ),
