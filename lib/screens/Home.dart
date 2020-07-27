@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               physics: NeverScrollableScrollPhysics(),
               child: Center(
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
+                  duration: Duration(milliseconds: 100),
                   decoration: BoxDecoration(
                     color: color,
                   ),
