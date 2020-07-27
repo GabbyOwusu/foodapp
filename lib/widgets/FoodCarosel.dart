@@ -28,9 +28,9 @@ class _FoodCarouselState extends State<FoodCarousel> {
         children: <Widget>[
           SizedBox(height: 60),
           AnimatedContainer(
-            duration: Duration(milliseconds: 300),
+            duration: Duration(milliseconds: 400),
             curve: Curves.easeInOutQuint,
-            height: widget.active ? 0 : 200,
+            height: widget.active ? 0 : 100,
           ),
           Padding(
             padding: EdgeInsets.only(top: 30),
@@ -60,7 +60,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 270,
+                      height: 200,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage(widget.foodCard.image)),
@@ -69,7 +69,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Text(
                       widget.foodCard.title,
@@ -80,7 +80,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -110,7 +110,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 10),
                     Text(
                       '10 - 15 min',
                       style:
