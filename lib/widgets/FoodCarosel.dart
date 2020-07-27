@@ -36,10 +36,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
             padding: EdgeInsets.only(top: 30),
             child: SizedBox(
               height: 100,
-              child: Hero(
-                tag: widget.tag,
-                child: Image.asset(widget.foodCard.headingImage),
-              ),
+              child: Image.asset(widget.foodCard.headingImage),
             ),
           ),
           Padding(
