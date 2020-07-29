@@ -46,11 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
               physics: NeverScrollableScrollPhysics(),
               child: Center(
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 250),
                   decoration: BoxDecoration(
                     color: color,
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Container(
                         height: 800,
