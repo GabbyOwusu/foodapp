@@ -35,6 +35,16 @@ class _DetailsState extends State<Details> {
                     Navigator.pop(context);
                   }),
             ),
+            SliverList(
+                delegate: SliverChildListDelegate([
+              Column(
+                children: <Widget>[
+                  Container(
+                    color: Colors.green,
+                  ),
+                ],
+              )
+            ]))
           ],
         ),
       ),
