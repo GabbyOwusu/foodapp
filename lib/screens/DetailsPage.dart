@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:order_food/widgets/foodgrid.dart';
 import 'package:order_food/widgets/snackList.dart';
 
 class Details extends StatefulWidget {
@@ -38,7 +39,7 @@ class _DetailsState extends State<Details> {
               Column(
                 children: <Widget>[
                   Container(
-                    height: 700,
+                    height: 10000,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -132,7 +133,8 @@ class _DetailsState extends State<Details> {
                               style: TextStyle(fontSize: 17),
                             ),
                           ),
-                        )
+                        ),
+                        FoodGrid(),
                       ],
                     ),
                   ),
