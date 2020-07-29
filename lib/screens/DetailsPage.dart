@@ -34,7 +34,7 @@ class _DetailsState extends State<Details> {
                   onPressed: () {
                     Navigator.pop(context);
                   }),
-            )
+            ),
           ],
         ),
       ),
