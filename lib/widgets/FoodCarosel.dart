@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/screens/DetailsPage.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:provider/provider.dart';
 
 class FoodCarousel extends StatefulWidget {
   final bool active;
@@ -17,6 +19,10 @@ class FoodCarousel extends StatefulWidget {
 }
 
 class _FoodCarouselState extends State<FoodCarousel> {
+  CardProvider get provider {
+    return Provider.of<CardProvider>(context, listen: false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,8 +47,17 @@ class _FoodCarouselState extends State<FoodCarousel> {
             padding: EdgeInsets.only(left: 10, right: 10, top: 30),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Details()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (
+                      context,
+                    ) =>
+                        Details(
+                      foodcard: widget.foodCard,
+                    ),
+                  ),
+                );
               },
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -55,14 +70,17 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 250,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(widget.foodCard.image)),
-                        color: widget.foodCard.color,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
+                        height: 250,
+                        decoration: BoxDecoration(
+                          color: widget.foodCard.color,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Hero(
+                          tag: widget.foodCard.image,
+                          child: Center(
+                            child: Image.asset(widget.foodCard.image),
+                          ),
+                        )),
                     SizedBox(
                       height: 30,
                     ),
