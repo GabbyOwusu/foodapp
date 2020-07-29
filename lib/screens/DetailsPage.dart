@@ -1,18 +1,28 @@
 import "package:flutter/material.dart";
+import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/widgets/foodgrid.dart';
 import 'package:order_food/widgets/snackList.dart';
+import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {
+  final FoodCard foodcard;
+  Details({@required this.foodcard});
+
   final String tag = 'hello';
   @override
   _DetailsState createState() => _DetailsState();
 }
 
 class _DetailsState extends State<Details> {
+  CardProvider get provider {
+    return Provider.of<CardProvider>(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: widget.foodcard.color,
       body: SafeArea(
         child: CustomScrollView(
           slivers: <Widget>[
@@ -25,9 +35,11 @@ class _DetailsState extends State<Details> {
                 centerTitle: true,
                 title: Padding(
                     padding: EdgeInsets.only(top: 80),
-                    child: Image.asset('images/food.png')),
+                    child: Hero(
+                        tag: widget.foodcard.title,
+                        child: Image.asset(widget.foodcard.image))),
               ),
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.transparent,
               leading: IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -39,7 +51,7 @@ class _DetailsState extends State<Details> {
               Column(
                 children: <Widget>[
                   Container(
-                    height: 10000,
+                    height: 1800,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -120,7 +132,10 @@ class _DetailsState extends State<Details> {
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: 10,
-                              itemBuilder: (context, index) => SnackList(),
+                              itemBuilder: (context, index) => SnackList(
+                                index: index,
+                                foodCardimage: widget.foodcard,
+                              ),
                             ),
                           ),
                         ),
@@ -134,6 +149,7 @@ class _DetailsState extends State<Details> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 50),
                         Expanded(
                           child: GridView.builder(
                             primary: false,
@@ -141,9 +157,13 @@ class _DetailsState extends State<Details> {
                             physics: NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2),
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 40,
+                            ),
                             itemCount: 10,
-                            itemBuilder: (context, index) => FoodGrid(),
+                            itemBuilder: (context, index) => FoodGrid(
+                              index: index,
+                            ),
                           ),
                         ),
                       ],
