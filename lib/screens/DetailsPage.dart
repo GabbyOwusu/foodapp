@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:order_food/widgets/snackList.dart';
 
 class Details extends StatefulWidget {
   final String tag = 'hello';
@@ -90,17 +91,28 @@ class _DetailsState extends State<Details> {
                                     fontSize: 15,
                                     color: Colors.grey.withOpacity(0.8)),
                               ),
-                              SizedBox(
-                                height: 30,
-                              ),
-                              Text(
-                                '10 - 15 min',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          '10 - 15 min',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20),
+                          child: Container(
+                            height: 120,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: 10,
+                              itemBuilder: (context, index) => SnackList(),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),
