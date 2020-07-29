@@ -3,8 +3,8 @@ import 'package:order_food/screens/DetailsPage.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
 
 class FoodCarousel extends StatefulWidget {
-  final String tag = 'hello';
   final bool active;
+
   final FoodCard foodCard;
 
   FoodCarousel({
@@ -20,15 +20,13 @@ class _FoodCarouselState extends State<FoodCarousel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: widget.active ? widget.foodCard.color : null,
       child: ListView(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         children: <Widget>[
           SizedBox(height: 60),
           AnimatedContainer(
-            duration: Duration(milliseconds: 400),
+            duration: Duration(milliseconds: 50),
             curve: Curves.easeInOutQuint,
             height: widget.active ? 0 : 100,
           ),
@@ -66,7 +64,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     Text(
                       widget.foodCard.title,
@@ -77,7 +75,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -107,7 +105,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 30),
                     Text(
                       '10 - 15 min',
                       style:
