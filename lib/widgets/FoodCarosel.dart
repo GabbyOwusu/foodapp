@@ -76,7 +76,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Hero(
-                          tag: widget.foodCard.image,
+                          tag: 'widget.foodcard.title',
                           child: Center(
                             child: Image.asset(widget.foodCard.image),
                           ),
