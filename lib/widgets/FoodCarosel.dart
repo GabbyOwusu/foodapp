@@ -55,7 +55,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 200,
+                      height: 250,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage(widget.foodCard.image)),
