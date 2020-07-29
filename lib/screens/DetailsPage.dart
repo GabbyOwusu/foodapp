@@ -97,19 +97,39 @@ class _DetailsState extends State<Details> {
                         SizedBox(
                           height: 30,
                         ),
-                        Text(
-                          '10 - 15 min',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                        Container(
+                          height: 30,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(248, 242, 255, 1)
+                                  .withOpacity(0.7),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Center(
+                            child: Text(
+                              '10 - 15 min',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
+                          ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 20),
+                          padding: EdgeInsets.only(top: 50),
                           child: Container(
                             height: 120,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: 10,
                               itemBuilder: (context, index) => SnackList(),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 20, top: 30),
+                            child: Text(
+                              'Breakfast Value Meals',
+                              style: TextStyle(fontSize: 17),
                             ),
                           ),
                         )
