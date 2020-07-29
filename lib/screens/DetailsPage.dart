@@ -15,18 +15,15 @@ class _DetailsState extends State<Details> {
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              expandedHeight: 200,
+              expandedHeight: 250,
               actions: <Widget>[
                 IconButton(icon: Icon(Icons.search), onPressed: () {})
               ],
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 title: Padding(
-                  padding: EdgeInsets.only(top: 50),
-                  child: CircleAvatar(
-                    radius: 50,
-                  ),
-                ),
+                    padding: EdgeInsets.only(top: 80),
+                    child: Image.asset('images/food.png')),
               ),
               backgroundColor: Colors.red,
               leading: IconButton(
@@ -40,7 +37,72 @@ class _DetailsState extends State<Details> {
               Column(
                 children: <Widget>[
                   Container(
-                    color: Colors.green,
+                    height: 700,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                      ),
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          'MacDonald\'s',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 26,
+                              fontFamily: 'SanFransisco',
+                              letterSpacing: 0.5),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 18,
+                              ),
+                              Text(
+                                '4.8',
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.grey.withOpacity(0.8)),
+                              ),
+                              Text(
+                                'Burgers American',
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.grey.withOpacity(0.8)),
+                              ),
+                              Text(
+                                'Dollars',
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.grey.withOpacity(0.8)),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                '10 - 15 min',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               )
