@@ -34,7 +34,7 @@ class _SnackListState extends State<SnackList> {
         });
       },
       child: Container(
-        margin: EdgeInsets.only(left: 20),
+        margin: EdgeInsets.only(left: 20, right: 10),
         width: 100,
         decoration: BoxDecoration(
             color: active
@@ -46,7 +46,7 @@ class _SnackListState extends State<SnackList> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'images/chickenbucket.png',
+                'images/food.png',
                 width: 50,
               ),
               SizedBox(

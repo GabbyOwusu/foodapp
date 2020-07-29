@@ -9,7 +9,6 @@ class Details extends StatefulWidget {
   final FoodCard foodcard;
   Details({@required this.foodcard});
 
-  final String tag = 'hello';
   @override
   _DetailsState createState() => _DetailsState();
 }
@@ -37,9 +36,7 @@ class _DetailsState extends State<Details> {
                     centerTitle: true,
                     title: Padding(
                         padding: EdgeInsets.only(top: 80),
-                        child: Hero(
-                            tag: 'widget.foodcard.title',
-                            child: Image.asset(widget.foodcard.image))),
+                        child: Image.asset(widget.foodcard.image)),
                   ),
                   backgroundColor: Colors.transparent,
                   leading: IconButton(
