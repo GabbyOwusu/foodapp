@@ -134,7 +134,18 @@ class _DetailsState extends State<Details> {
                             ),
                           ),
                         ),
-                        FoodGrid(),
+                        Expanded(
+                          child: GridView.builder(
+                            primary: false,
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2),
+                            itemCount: 10,
+                            itemBuilder: (context, index) => FoodGrid(),
+                          ),
+                        ),
                       ],
                     ),
                   ),
