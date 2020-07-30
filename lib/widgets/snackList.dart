@@ -31,7 +31,7 @@ class _SnackListState extends State<SnackList> {
         });
       },
       child: Container(
-        margin: EdgeInsets.only(left: 20, right: 10),
+        margin: EdgeInsets.only(left: 20),
         width: 100,
         decoration: BoxDecoration(
             color: active
