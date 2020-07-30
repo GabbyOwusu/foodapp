@@ -55,8 +55,8 @@ class _DetailsState extends State<Details> {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30),
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20),
                             ),
                           ),
                           child: Column(
@@ -144,7 +144,9 @@ class _DetailsState extends State<Details> {
                                   padding: EdgeInsets.only(left: 20, top: 30),
                                   child: Text(
                                     'Breakfast Value Meals',
-                                    style: TextStyle(fontSize: 17),
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ),
                               ),
