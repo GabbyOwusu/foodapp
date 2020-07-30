@@ -25,6 +25,16 @@ class CardProvider extends BaseProvider {
           title: 'KFC',
           headingImage: 'images/kfc.png',
           image: 'images/chickenbucket.png'),
+      FoodCard(
+          color: Colors.blue,
+          title: 'Dominos',
+          headingImage: 'images/domino.png',
+          image: 'images/pizza.png'),
+      FoodCard(
+          color: Colors.black,
+          title: 'Shake Shack',
+          headingImage: 'images/shake.png',
+          image: 'images/burger.png'),
     ];
   }
 }
