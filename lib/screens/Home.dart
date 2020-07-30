@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/models/FoodCarouselCard.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/widgets/FoodCarosel.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +11,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PageController controller = PageController(
     initialPage: 2,
-    viewportFraction: 0.85,
+    viewportFraction: 0.86,
   );
   int currentPage;
 
@@ -46,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               physics: NeverScrollableScrollPhysics(),
               child: Center(
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 250),
+                  duration: Duration(milliseconds: 300),
                   decoration: BoxDecoration(
                     color: color,
                   ),
