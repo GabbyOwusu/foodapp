@@ -11,7 +11,7 @@ class FoodCarousel extends StatefulWidget {
 
   FoodCarousel({
     @required this.foodCard,
-    this.active,
+    @required this.active,
   });
 
   @override
@@ -78,9 +78,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                         child: Center(
                           child: Image.asset(widget.foodCard.image),
                         )),
-                    SizedBox(
-                      height: 30,
-                    ),
+                    SizedBox(height: 30),
                     Text(
                       widget.foodCard.title,
                       style: TextStyle(
@@ -89,17 +87,11 @@ class _FoodCarouselState extends State<FoodCarousel> {
                         fontSize: 25,
                       ),
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
+                    SizedBox(height: 30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                          size: 18,
-                        ),
+                        Icon(Icons.star, color: Colors.yellow, size: 18),
                         Text(
                           '4.8',
                           style: TextStyle(
@@ -109,14 +101,16 @@ class _FoodCarouselState extends State<FoodCarousel> {
                         Text(
                           'Burgers American',
                           style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey.withOpacity(0.5)),
+                            fontSize: 15,
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
                         ),
                         Text(
                           'Dollars',
                           style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey.withOpacity(0.5)),
+                            fontSize: 15,
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
                         ),
                       ],
                     ),
