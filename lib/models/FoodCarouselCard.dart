@@ -9,3 +9,10 @@ class FoodCard {
   FoodCard(
       {this.color, this.headingImage, this.image, this.title, this.height});
 }
+
+class SnackItems {
+  String image;
+  Color color;
+  Color textColor;
+  SnackItems({this.image, this.color, this.textColor});
+}
