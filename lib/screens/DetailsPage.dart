@@ -30,7 +30,7 @@ class _DetailsState extends State<Details> {
                 SliverAppBar(
                   expandedHeight: 250,
                   actions: <Widget>[
-                    IconButton(icon: Icon(Icons.search), onPressed: () {})
+                    IconButton(icon: Icon(Icons.search), onPressed: () {}),
                   ],
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
@@ -80,42 +80,41 @@ class _DetailsState extends State<Details> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 18,
-                                    ),
+                                    Icon(Icons.star,
+                                        color: Colors.yellow, size: 18),
                                     Text(
                                       '4.8',
                                       style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.grey.withOpacity(0.8)),
+                                        fontSize: 15,
+                                        color: Colors.grey.withOpacity(0.8),
+                                      ),
                                     ),
                                     Text(
                                       'Burgers American',
                                       style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.grey.withOpacity(0.8)),
+                                        fontSize: 15,
+                                        color: Colors.grey.withOpacity(0.8),
+                                      ),
                                     ),
                                     Text(
                                       'Dollars',
                                       style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.grey.withOpacity(0.8)),
+                                        fontSize: 15,
+                                        color: Colors.grey.withOpacity(0.8),
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
-                              SizedBox(
-                                height: 30,
-                              ),
+                              SizedBox(height: 30),
                               Container(
                                 height: 30,
                                 width: 130,
                                 decoration: BoxDecoration(
-                                    color: Color.fromRGBO(248, 242, 255, 1)
-                                        .withOpacity(0.7),
-                                    borderRadius: BorderRadius.circular(30)),
+                                  color: Color.fromRGBO(248, 242, 255, 1)
+                                      .withOpacity(0.7),
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
                                 child: Center(
                                   child: Text(
                                     '10 - 15 min',
