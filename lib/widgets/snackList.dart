@@ -7,10 +7,7 @@ class SnackList extends StatefulWidget {
   final int index;
   final FoodCard foodCardimage;
 
-  SnackList({
-    @required this.index,
-    @required this.foodCardimage,
-  });
+  SnackList({@required this.index, @required this.foodCardimage});
   @override
   _SnackListState createState() => _SnackListState();
 }
