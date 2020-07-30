@@ -14,7 +14,7 @@ class CardProvider extends BaseProvider {
           color: Color.fromRGBO(0, 150, 127, 1),
           title: 'Starbucks',
           headingImage: 'images/starbucks.png',
-          image: 'images/food.png'),
+          image: 'images/coffee2.png'),
       FoodCard(
           color: Color.fromRGBO(26, 186, 24, 1),
           title: 'Subway',
