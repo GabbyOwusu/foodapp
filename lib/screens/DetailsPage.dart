@@ -36,7 +36,10 @@ class _DetailsState extends State<Details> {
                     centerTitle: true,
                     title: Padding(
                         padding: EdgeInsets.only(top: 80),
-                        child: Image.asset(widget.foodcard.image)),
+                        child: Hero(
+                            tag: 'me',
+                            child: Image.asset(widget.foodcard.image,
+                                width: 200))),
                   ),
                   backgroundColor: Colors.transparent,
                   leading: IconButton(
