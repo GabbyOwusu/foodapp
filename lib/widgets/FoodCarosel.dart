@@ -32,7 +32,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
         children: <Widget>[
           SizedBox(height: 60),
           AnimatedContainer(
-            duration: Duration(milliseconds: 290),
+            duration: Duration(milliseconds: 170),
             curve: Curves.easeInOutQuint,
             height: widget.active ? 0 : 60,
           ),
