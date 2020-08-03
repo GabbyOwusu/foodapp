@@ -179,6 +179,15 @@ class _DetailsState extends State<Details> {
                 ),
               ],
             ),
+
+            //     ? DraggableScrollableSheet(
+            //         builder: (context, index) => AnimatedContainer(
+            //             duration: Duration(
+            //               milliseconds: 400,
+            //             ),
+            //             height: 400,
+            //             color: Colors.green),
+            //       )
           ],
         ),
       ),
