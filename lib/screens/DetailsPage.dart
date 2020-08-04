@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/widgets/foodgrid.dart';
+import 'package:order_food/widgets/orderSheet.dart';
 import 'package:order_food/widgets/snackList.dart';
 import 'package:provider/provider.dart';
 
@@ -179,15 +180,7 @@ class _DetailsState extends State<Details> {
                 ),
               ],
             ),
-
-            //     ? DraggableScrollableSheet(
-            //         builder: (context, index) => AnimatedContainer(
-            //             duration: Duration(
-            //               milliseconds: 400,
-            //             ),
-            //             height: 400,
-            //             color: Colors.green),
-            //       )
+            Align(alignment: Alignment.bottomCenter, child: Order()),
           ],
         ),
       ),
