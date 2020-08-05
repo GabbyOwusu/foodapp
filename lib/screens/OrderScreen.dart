@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/Done.dart';
 import 'package:order_food/widgets/oderCard.dart';
 
 class OderScreen extends StatefulWidget {
@@ -184,7 +185,14 @@ class _OderScreenState extends State<OderScreen> {
                   Container(
                     height: 40,
                     width: 40,
-                    color: Colors.black,
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+                    child: Image.asset(
+                      'images/applepay.png',
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(
                     width: 20,
@@ -204,20 +212,30 @@ class _OderScreenState extends State<OderScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Center(
-          child: Text(
-            'Pay AED 24',
-            style: TextStyle(
-              fontFamily: 'SanFransisco',
-              fontSize: 20,
-              color: Colors.white,
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Done(),
+            ),
+          );
+        },
+        child: Container(
+          margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+          height: 60,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Center(
+            child: Text(
+              'Pay AED 24',
+              style: TextStyle(
+                fontFamily: 'SanFransisco',
+                fontSize: 20,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
