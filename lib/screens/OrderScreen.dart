@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/widgets/oderCard.dart';
 
@@ -45,7 +46,7 @@ class _OderScreenState extends State<OderScreen> {
               ),
               OrderCard(),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Text(
                 'You might also like',
@@ -53,6 +54,9 @@ class _OderScreenState extends State<OderScreen> {
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'SanFransisco'),
+              ),
+              SizedBox(
+                height: 20,
               ),
               SingleChildScrollView(
                 primary: false,
@@ -75,7 +79,146 @@ class _OderScreenState extends State<OderScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: 30),
+              Text(
+                'Total',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'SanFransisco'),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Subtotal',
+                        style: TextStyle(
+                            fontFamily: 'SanFransisco',
+                            fontSize: 17,
+                            color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Delivery fee(free)',
+                        style: TextStyle(
+                            fontFamily: 'SanFransisco',
+                            fontSize: 17,
+                            color: Colors.lightGreen),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'AED 24',
+                        style: TextStyle(
+                            fontFamily: 'SanFransisco',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'AED 0',
+                        style: TextStyle(
+                            fontFamily: 'SanFransisco',
+                            fontSize: 17,
+                            color: Colors.lightGreen),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(height: 10),
+              Divider(
+                endIndent: 1,
+                indent: 1,
+                color: Colors.grey[200],
+                thickness: 1,
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Text(
+                    'Total',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'SanFransisco'),
+                  ),
+                  Spacer(),
+                  Text(
+                    'AED 24',
+                    style: TextStyle(
+                        fontFamily: 'SanFransisco',
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Pay with',
+                style: TextStyle(
+                    fontFamily: 'SanFransisco',
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: 40,
+                    width: 40,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Apple Pay',
+                    style: TextStyle(
+                      fontFamily: 'SanFransisco',
+                      fontSize: 17,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(Icons.arrow_forward)
+                ],
+              )
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Center(
+          child: Text(
+            'Pay AED 24',
+            style: TextStyle(
+              fontFamily: 'SanFransisco',
+              fontSize: 20,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
