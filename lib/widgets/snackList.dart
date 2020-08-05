@@ -34,10 +34,11 @@ class _SnackListState extends State<SnackList> {
         margin: EdgeInsets.only(left: 20),
         width: 100,
         decoration: BoxDecoration(
-            color: active
-                ? color
-                : Color.fromRGBO(248, 242, 255, 1).withOpacity(0.7),
-            borderRadius: BorderRadius.circular(10)),
+          color: active
+              ? color
+              : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.5),
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
