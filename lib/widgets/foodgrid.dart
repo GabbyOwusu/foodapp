@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/widgets/orderSheet.dart';
 
 class FoodGrid extends StatefulWidget {
   final int index;
@@ -67,7 +68,13 @@ class _FoodGridState extends State<FoodGrid> {
                     ),
                     Spacer(),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        showBottomSheet(
+                            elevation: 200.0,
+                            // backgroundColor: Colors.black.withOpacity(0.3),
+                            context: context,
+                            builder: (context) => Order());
+                      },
                       child: Container(
                         height: 20,
                         width: 20,
