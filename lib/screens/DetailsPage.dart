@@ -153,18 +153,21 @@ class _DetailsState extends State<Details> {
                           ),
                           SizedBox(height: 50),
                           Expanded(
-                            child: GridView.builder(
-                              primary: false,
-                              shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 30,
-                              ),
-                              itemCount: 10,
-                              itemBuilder: (context, index) => FoodGrid(
-                                index: index,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: GridView.builder(
+                                primary: false,
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 2,
+                                        mainAxisSpacing: 10,
+                                        crossAxisSpacing: 10),
+                                itemCount: 10,
+                                itemBuilder: (context, index) => FoodGrid(
+                                  index: index,
+                                ),
                               ),
                             ),
                           ),
