@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
+import 'package:order_food/screens/OrderScreen.dart';
 import 'package:order_food/widgets/foodgrid.dart';
 import 'package:order_food/widgets/orderSheet.dart';
 import 'package:order_food/widgets/snackList.dart';
@@ -112,8 +114,8 @@ class _DetailsState extends State<Details> {
                             height: 30,
                             width: 130,
                             decoration: BoxDecoration(
-                              color: Color.fromRGBO(248, 242, 255, 1)
-                                  .withOpacity(0.7),
+                              color: Color.fromRGBO(235, 235, 250, 1)
+                                  .withOpacity(0.5),
                               borderRadius: BorderRadius.circular(30),
                             ),
                             child: Center(
@@ -175,7 +177,67 @@ class _DetailsState extends State<Details> {
             ),
           ],
         ),
-        // Align(alignment: Alignment.bottomCenter, child: Order()),
+      ),
+      bottomSheet: Container(
+        height: 80,
+        padding: EdgeInsets.all(10),
+        color: Colors.white,
+        child: Row(
+          children: [
+            Container(
+              height: 40,
+              width: 30,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(248, 242, 255, 1).withOpacity(1),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Center(
+                child: Text(
+                  '1',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Text(
+              'AED24',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+            Spacer(),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OderScreen(),
+                  ),
+                );
+              },
+              child: Container(
+                width: 200,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Center(
+                  child: Text(
+                    'View cart',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'SanFransisco',
+                      height: 1.3,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
