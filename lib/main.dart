@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Order Food',
         theme: ThemeData(
-            primarySwatch: Colors.blue, canvasColor: Colors.transparent),
+          primarySwatch: Colors.blue,
+        ),
         home: MyHomePage(),
       ),
     );
