@@ -23,22 +23,22 @@ class _FoodGridState extends State<FoodGrid> {
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 100),
-        margin: EdgeInsets.only(left: 20, right: 20),
-        width: 210,
-        height: 210,
+        //margin: EdgeInsets.only(left: 20, right: 20),
+        // width: 210,
+        // height: 200,
         decoration: BoxDecoration(
             color: active
                 ? Colors.red
-                : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.5),
+                : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.2),
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: EdgeInsets.only(top: 20),
+          padding: EdgeInsets.only(top: 10),
           child: Column(
             children: <Widget>[
               Center(
                 child: Image.asset(
                   'images/chickenbucket.png',
-                  width: 100,
+                  width: 70,
                 ),
               ),
               Spacer(),
