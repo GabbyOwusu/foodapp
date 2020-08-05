@@ -31,7 +31,7 @@ class _OrderCardState extends State<OrderCard> {
                   'Big Mac Burger',
                   style: TextStyle(
                     fontFamily: 'SanFransisco',
-                    fontSize: 15,
+                    fontSize: 17,
                   ),
                 ),
                 SizedBox(
@@ -41,7 +41,7 @@ class _OrderCardState extends State<OrderCard> {
                   'AED24',
                   style: TextStyle(
                     fontSize: 17,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
@@ -50,19 +50,20 @@ class _OrderCardState extends State<OrderCard> {
           //Spacer(),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey[400], width: 2),
+              border:
+                  Border.all(color: Color.fromRGBO(235, 235, 250, 1), width: 2),
               borderRadius: BorderRadius.circular(30),
             ),
             child: Row(
               children: [
                 IconButton(
                     icon: (Icon(Icons.add)),
-                    color: Colors.grey[400],
+                    color: Color.fromRGBO(235, 235, 250, 1),
                     onPressed: () {}),
                 Text('1'),
                 IconButton(
                     icon: (Icon(Icons.add)),
-                    color: Colors.grey[400],
+                    color: Color.fromRGBO(235, 235, 250, 1),
                     onPressed: () {}),
               ],
             ),
