@@ -207,6 +207,9 @@ class _OderScreenState extends State<OderScreen> {
                   Spacer(),
                   Icon(Icons.arrow_forward)
                 ],
+              ),
+              SizedBox(
+                height: 30,
               )
             ],
           ),
