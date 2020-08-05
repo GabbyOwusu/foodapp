@@ -106,27 +106,32 @@ class _OrderState extends State<Order> {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(right: 20, top: 10),
-                width: 200,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Center(
-                  child: Text(
-                    'Add to cart',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'SanFransisco',
-                      height: 1.3,
-                      fontSize: 20,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  margin: EdgeInsets.only(right: 20, top: 10),
+                  width: 200,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Add to cart',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'SanFransisco',
+                        height: 1.3,
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           )
         ],
