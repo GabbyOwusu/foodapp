@@ -29,7 +29,7 @@ class _FoodGridState extends State<FoodGrid> {
         decoration: BoxDecoration(
             color: active
                 ? Colors.red
-                : Color.fromRGBO(248, 242, 255, 1).withOpacity(0.7),
+                : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.5),
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: EdgeInsets.only(top: 20),
@@ -70,17 +70,21 @@ class _FoodGridState extends State<FoodGrid> {
                     GestureDetector(
                       onTap: () {
                         showBottomSheet(
-                            elevation: 200.0,
-                            // backgroundColor: Colors.black.withOpacity(0.3),
-                            context: context,
-                            builder: (context) => Order());
+                          elevation: 20,
+                          context: context,
+                          builder: (context) => Order(),
+                        );
                       },
                       child: Container(
-                        height: 20,
-                        width: 20,
+                        height: 30,
+                        width: 30,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color.fromRGBO(235, 235, 250, 1),
+                          color: Colors.transparent,
+                          border: Border.all(
+                            width: 2,
+                            color: Color.fromRGBO(235, 235, 250, 1),
+                          ),
                         ),
                         child: Center(
                             child: Icon(
