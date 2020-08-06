@@ -23,9 +23,6 @@ class _FoodGridState extends State<FoodGrid> {
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 100),
-        //margin: EdgeInsets.only(left: 20, right: 20),
-        // width: 210,
-        // height: 200,
         decoration: BoxDecoration(
             color: active
                 ? Colors.red
