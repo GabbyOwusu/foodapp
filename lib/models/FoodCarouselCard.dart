@@ -11,8 +11,6 @@ class FoodCard {
 }
 
 class SnackItems {
-  String image;
-  Color color;
-  Color textColor;
-  SnackItems({this.image, this.color, this.textColor});
+  List<String> images;
+  SnackItems({this.images});
 }
