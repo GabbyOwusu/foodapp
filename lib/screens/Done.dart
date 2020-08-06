@@ -6,43 +6,92 @@ class Done extends StatefulWidget {
 }
 
 class _DoneState extends State<Done> {
+  double endSize = 2.0;
+  bool ended = false;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 3), () {
+      setState(() {
+        endSize = 500;
+        ended = !ended;
+      });
+      Future.delayed(Duration(milliseconds: 1600), () {
+        Navigator.pop(context);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // backgroundColor: Colors.red,
-      body: Container(
+    return Material(
+      color: Colors.red,
+      child: Container(
         color: Colors.red,
-        child: Center(
+        alignment: Alignment.center,
+        child: TweenAnimationBuilder(
+          curve: Curves.bounceInOut,
+          tween: Tween<double>(begin: 2, end: endSize),
+          duration: Duration(milliseconds: 1500),
+          builder: (context, size, child) {
+            return Transform.scale(scale: 0.9, child: child);
+          },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                child: Stack(
-                  children: [
-                    SizedBox(
-                      height: 160,
-                      width: 160,
-                      child: CircularProgressIndicator(
-                        backgroundColor: Colors.white.withOpacity(0.5),
-                        valueColor: AlwaysStoppedAnimation(Colors.white),
-                        strokeWidth: 6,
+              AnimatedSwitcher(
+                transitionBuilder: (child, animation) =>
+                    ScaleTransition(scale: animation, child: child),
+                switchInCurve: Curves.bounceIn,
+                //switchOutCurve: Curves.elasticInOut,
+                duration: Duration(milliseconds: 300),
+                child: ended
+                    ? AnimatedContainer(
+                        height: ended ? 150 : 100,
+                        width: ended ? 150 : 100,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        duration: Duration(milliseconds: 300),
+                        child: Center(
+                          child: Icon(
+                            Icons.done,
+                            color: Colors.red,
+                            size: 70,
+                          ),
+                        ),
+                      )
+                    : Container(
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              height: 150,
+                              width: 150,
+                              child: CircularProgressIndicator(
+                                backgroundColor: Colors.white.withOpacity(0.5),
+                                valueColor:
+                                    AlwaysStoppedAnimation(Colors.white),
+                                strokeWidth: 5,
+                              ),
+                            ),
+                            Positioned(
+                              top: 37,
+                              left: 35,
+                              child: Image.asset(
+                                'images/faceid.png',
+                                width: 80,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Positioned(
-                      top: 30,
-                      left: 30,
-                      child: Image.asset(
-                        'images/faceid.png',
-                        width: 100,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
               ),
               SizedBox(height: 30),
               Text(
-                'Sit tight...',
+                ended ? 'Order placed succesfully' : 'Sit tight...',
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -53,7 +102,10 @@ class _DoneState extends State<Done> {
                 height: 18,
               ),
               Text(
-                'We\'re placing your order',
+                ended
+                    ? 'You will recieve your tasty food in \n10 -15 mins'
+                    : 'We\'re placing your order',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
