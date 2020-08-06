@@ -12,7 +12,6 @@ class _OderScreenState extends State<OderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.grey[100].withOpacity(0.3),
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
@@ -219,10 +218,23 @@ class _OderScreenState extends State<OderScreen> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => Done(),
-            ),
+            MaterialPageRoute(builder: (context) => Done()),
           );
+          //   PageRouteBuilder(
+          //     transitionDuration: Duration(seconds: 1),
+          //     transitionsBuilder: (context, animation, secondAnimation, child) {
+          //       animation = CurvedAnimation(
+          //           parent: animation,
+          //           curve: Interval(0.500, 1.000, curve: Curves.easeIn));
+          //       return ScaleTransition(
+          //         scale: animation,
+          //         child: child,
+          //         alignment: Alignment.center,
+          //       );
+          //     },
+          //     pageBuilder: (context, animation, secondAnimation) => Done(),
+          //   ),
+          // );
         },
         child: Container(
           margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
