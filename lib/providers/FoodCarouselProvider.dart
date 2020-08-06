@@ -39,12 +39,14 @@ class CardProvider extends BaseProvider {
   }
 }
 
-// class SnackItemProvider extends BaseProvider {
-//   List<SnackItems> get snacks {
-//     return <SnackItems>[
-//       SnackItems(
-//         color:
-//       )
-//     ];
-//   }
-// }
+List<SnackItems> get menu {
+  return <SnackItems>[
+    SnackItems(
+      images: [
+        'images/burger.png',
+        'images/chickenbucket.png',
+      ],
+    ),
+    SnackItems(images: ['images/'])
+  ];
+}
