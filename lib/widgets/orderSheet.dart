@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Order extends StatefulWidget {
+  bool added;
+  Order({this.added});
+
   @override
   _OrderState createState() => _OrderState();
 }
@@ -108,6 +111,9 @@ class _OrderState extends State<Order> {
               ),
               GestureDetector(
                 onTap: () {
+                  setState(() {
+                    widget.added = !widget.added;
+                  });
                   Navigator.pop(context);
                 },
                 child: Container(
