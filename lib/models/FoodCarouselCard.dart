@@ -6,11 +6,13 @@ class FoodCard {
   Color color;
   String title;
   String image;
-  FoodCard(
-      {this.color, this.headingImage, this.image, this.title, this.height});
-}
+  List<String> menu;
 
-class SnackItems {
-  List<String> images;
-  SnackItems({this.images});
+  FoodCard(
+      {this.color,
+      this.headingImage,
+      this.image,
+      this.title,
+      this.height,
+      this.menu});
 }
