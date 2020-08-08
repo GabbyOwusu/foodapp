@@ -111,9 +111,9 @@ class _OrderState extends State<Order> {
               ),
               GestureDetector(
                 onTap: () {
-                  setState(() {
-                    widget.added = !widget.added;
-                  });
+                  // setState(() {
+                  //   widget.added = !widget.added;
+                  // });
                   Navigator.pop(context);
                 },
                 child: Container(
