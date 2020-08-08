@@ -34,8 +34,8 @@ class _FoodGridState extends State<FoodGrid> {
             children: <Widget>[
               Center(
                 child: Image.asset(
-                  'images/chickenbucket.png',
-                  width: 70,
+                  'images/burger.png',
+                  width: 100,
                 ),
               ),
               Spacer(),
@@ -68,6 +68,7 @@ class _FoodGridState extends State<FoodGrid> {
                       onTap: () {
                         showBottomSheet(
                           elevation: 20,
+                          backgroundColor: Colors.transparent,
                           context: context,
                           builder: (context) => Order(),
                         );
