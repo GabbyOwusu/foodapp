@@ -130,11 +130,9 @@ class _DetailsState extends State<Details> {
                             child: ListView.builder(
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: 10,
+                              itemCount: 6,
                               itemBuilder: (context, index) => SnackList(
-                                index: index,
-                                foodCardimage: widget.foodcard,
-                              ),
+                                  index: index, foodCardimage: widget.foodcard),
                             ),
                           ),
                         ),
