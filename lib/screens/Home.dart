@@ -22,7 +22,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     controller.addListener(() {
       int next = controller.page.round();
-
       if (currentPage != next) {
         setState(() {
           currentPage = next;
