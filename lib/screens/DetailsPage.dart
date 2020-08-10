@@ -159,9 +159,12 @@ class _DetailsState extends State<Details> {
                                       crossAxisCount: 2,
                                       mainAxisSpacing: 10,
                                       crossAxisSpacing: 10),
-                              itemCount: 10,
+                              itemCount: widget.foodcard.menu.length,
                               itemBuilder: (context, index) {
-                                return FoodGrid(index: index);
+                                return FoodGrid(
+                                  index: index,
+                                  gridMenu: widget.foodcard,
+                                );
                               }),
                         ),
                       ],
