@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/models/FoodCarouselCard.dart';
 
 class Order extends StatefulWidget {
-  bool added;
-  Order({this.added});
+  final bool added;
+  final int index;
+  final FoodCard burgerImage;
+  Order({this.added, this.burgerImage, this.index});
 
   @override
   _OrderState createState() => _OrderState();
@@ -40,7 +43,7 @@ class _OrderState extends State<Order> {
           SizedBox(
             height: 200,
             width: 200,
-            child: Image.asset('images/burger.png'),
+            child: Image.asset(widget.burgerImage.menu[widget.index]),
           ),
           SizedBox(height: 20),
           Text(
