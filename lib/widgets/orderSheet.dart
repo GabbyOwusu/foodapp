@@ -12,6 +12,8 @@ class Order extends StatefulWidget {
 }
 
 class _OrderState extends State<Order> {
+  int _counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -103,20 +105,25 @@ class _OrderState extends State<Order> {
                     IconButton(
                         icon: (Icon(Icons.add)),
                         color: Colors.grey[400],
-                        onPressed: () {}),
-                    Text('1'),
+                        onPressed: () {
+                          setState(() {
+                            _counter--;
+                          });
+                        }),
+                    Text('$_counter'),
                     IconButton(
                         icon: (Icon(Icons.add)),
                         color: Colors.grey[400],
-                        onPressed: () {}),
+                        onPressed: () {
+                          setState(() {
+                            _counter++;
+                          });
+                        }),
                   ],
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  // setState(() {
-                  //   widget.added = !widget.added;
-                  // });
                   Navigator.pop(context);
                 },
                 child: Container(
