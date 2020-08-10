@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:order_food/screens/DetailsPage.dart';
 
 class Done extends StatefulWidget {
   @override
@@ -8,16 +10,26 @@ class Done extends StatefulWidget {
 class _DoneState extends State<Done> {
   double endSize = 2.0;
   bool ended = false;
+  FoodCard food = FoodCard();
 
   @override
   void initState() {
     super.initState();
+
     Future.delayed(Duration(seconds: 3), () {
       setState(() {
         endSize = 500;
         ended = !ended;
       });
       Future.delayed(Duration(milliseconds: 1600), () {
+        // Navigator.pushReplacement(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => Details(
+        //       foodcard: food,
+        //     ),
+        //   ),
+        // );
         Navigator.pop(context);
       });
     });
