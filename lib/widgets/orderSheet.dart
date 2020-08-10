@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
 
-class Order extends StatefulWidget {
+class OrderSheet extends StatefulWidget {
   final bool added;
   final int index;
   final FoodCard burgerImage;
-  Order({this.added, this.burgerImage, this.index});
+  OrderSheet({this.added, this.burgerImage, this.index});
 
   @override
-  _OrderState createState() => _OrderState();
+  _OrderSheetState createState() => _OrderSheetState();
 }
 
-class _OrderState extends State<Order> {
+class _OrderSheetState extends State<OrderSheet> {
   int _counter = 0;
 
   @override
@@ -103,7 +103,7 @@ class _OrderState extends State<Order> {
                 child: Row(
                   children: [
                     IconButton(
-                        icon: (Icon(Icons.add)),
+                        icon: (Icon(Icons.remove)),
                         color: Colors.grey[400],
                         onPressed: () {
                           setState(() {
