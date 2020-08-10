@@ -26,10 +26,11 @@ class _FoodGridState extends State<FoodGrid> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 100),
         decoration: BoxDecoration(
-            color: active
-                ? Colors.red
-                : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.2),
-            borderRadius: BorderRadius.circular(10)),
+          color: active
+              ? Colors.red
+              : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.2),
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Padding(
           padding: EdgeInsets.only(top: 10),
           child: Column(
@@ -48,10 +49,11 @@ class _FoodGridState extends State<FoodGrid> {
                   child: Text(
                     'Big Breakfast meal',
                     style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'SanFransisco',
-                        color: active ? Colors.white : Colors.black,
-                        letterSpacing: 1),
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'SanFransisco',
+                      color: active ? Colors.white : Colors.black,
+                      letterSpacing: 1,
+                    ),
                   ),
                 ),
               ),
@@ -72,10 +74,7 @@ class _FoodGridState extends State<FoodGrid> {
                           elevation: 20,
                           backgroundColor: Colors.transparent,
                           context: context,
-                          builder: (
-                            context,
-                          ) =>
-                              Order(
+                          builder: (context) => Order(
                             burgerImage: widget.gridMenu,
                             index: widget.index,
                           ),
