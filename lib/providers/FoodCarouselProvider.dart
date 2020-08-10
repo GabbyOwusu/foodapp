@@ -36,11 +36,11 @@ class CardProvider extends BaseProvider {
         headingImage: 'images/subway.png',
         image: 'images/subwayfood.png',
         menu: [
-          'images/burger1.png',
-          'images/burger2.png',
-          'images/burger3.png',
-          'images/burger4.png',
-          'images/burger5.png',
+          'images/hotdog1.png',
+          'images/hotdog1.png',
+          'images/hotdog1.png',
+          'images/hotdog1.png',
+          'images/hotdog1.png',
         ],
       ),
       FoodCard(
@@ -74,11 +74,11 @@ class CardProvider extends BaseProvider {
           headingImage: 'images/shake.png',
           image: 'images/burger.png',
           menu: [
-            'images/hotdog1.png',
-            'images/hotdog1.png',
-            'images/hotdog1.png',
-            'images/hotdog1.png',
-            'images/hotdog1.png',
+            'images/burger1.png',
+            'images/burger2.png',
+            'images/burger3.png',
+            'images/burger4.png',
+            'images/burger5.png',
           ]),
     ];
   }
