@@ -72,7 +72,13 @@ class _FoodGridState extends State<FoodGrid> {
                           elevation: 20,
                           backgroundColor: Colors.transparent,
                           context: context,
-                          builder: (context) => Order(),
+                          builder: (
+                            context,
+                          ) =>
+                              Order(
+                            burgerImage: widget.gridMenu,
+                            index: widget.index,
+                          ),
                         );
                       },
                       child: Container(
