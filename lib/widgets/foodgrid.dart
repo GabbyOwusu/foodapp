@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/models/FoodCarouselCard.dart';
 import 'package:order_food/widgets/orderSheet.dart';
 
 class FoodGrid extends StatefulWidget {
   final int index;
+  final FoodCard gridMenu;
 
-  FoodGrid({@required this.index});
+  FoodGrid({@required this.index, this.gridMenu});
 
   @override
   _FoodGridState createState() => _FoodGridState();
@@ -34,7 +36,7 @@ class _FoodGridState extends State<FoodGrid> {
             children: <Widget>[
               Center(
                 child: Image.asset(
-                  'images/burger.png',
+                  widget.gridMenu.menu[widget.index],
                   width: 100,
                 ),
               ),
