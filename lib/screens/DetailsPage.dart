@@ -22,6 +22,7 @@ class _DetailsState extends State<Details> {
 
   bool active = false;
   bool adToCart = false;
+  int orderNumber = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -192,7 +193,7 @@ class _DetailsState extends State<Details> {
                     ),
                     child: Center(
                       child: Text(
-                        '1',
+                        '$orderNumber',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
