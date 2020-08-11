@@ -1,18 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:order_food/models/Order.dart';
+import 'package:order_food/providers/CartProvider.dart';
+import 'package:provider/provider.dart';
 
 class OrderSheet extends StatefulWidget {
-  final bool added;
   final int index;
   final FoodCard burgerImage;
-  OrderSheet({this.added, this.burgerImage, this.index});
+  OrderSheet({this.burgerImage, this.index});
 
   @override
   _OrderSheetState createState() => _OrderSheetState();
 }
 
 class _OrderSheetState extends State<OrderSheet> {
-  int _counter = 0;
+  bool addtoCart = false;
+  Order order;
+
+  CartProvider get provider {
+    return Provider.of<CartProvider>(context, listen: false);
+  }
+
+  @override
+  void initState() {
+    order = Order(food: widget.burgerImage);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,17 +119,19 @@ class _OrderSheetState extends State<OrderSheet> {
                         icon: (Icon(Icons.remove)),
                         color: Colors.grey[400],
                         onPressed: () {
-                          setState(() {
-                            _counter--;
-                          });
+                          setState(() {});
                         }),
-                    Text('$_counter'),
+                    Text('${order.quantity}'),
                     IconButton(
                         icon: (Icon(Icons.add)),
                         color: Colors.grey[400],
                         onPressed: () {
                           setState(() {
-                            _counter++;
+                            if (order.quantity > 4) return;
+                            order = Order(
+                              food: order.food,
+                              quantity: order.quantity + 1,
+                            );
                           });
                         }),
                   ],
@@ -124,6 +139,10 @@ class _OrderSheetState extends State<OrderSheet> {
               ),
               GestureDetector(
                 onTap: () {
+                  setState(() {
+                    addtoCart = true;
+                    provider.addOrder(order);
+                  });
                   Navigator.pop(context);
                 },
                 child: Container(
