@@ -1,7 +1,7 @@
 import 'package:order_food/models/FoodCarouselCard.dart';
 
 class Order {
-  final int quantity;
+  int quantity = 0;
   final FoodCard food;
 
   Order({this.food, this.quantity});
