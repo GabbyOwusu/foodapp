@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
 import 'package:order_food/screens/DetailsPage.dart';
+import 'package:order_food/screens/Home.dart';
 
 class Done extends StatefulWidget {
   @override
@@ -22,15 +23,11 @@ class _DoneState extends State<Done> {
         ended = !ended;
       });
       Future.delayed(Duration(milliseconds: 1600), () {
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => Details(
-        //       foodcard: food,
-        //     ),
-        //   ),
-        // );
-        Navigator.pop(context);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => MyHomePage()),
+        );
+        // Navigator.pop(context);
       });
     });
   }
@@ -56,7 +53,6 @@ class _DoneState extends State<Done> {
                 transitionBuilder: (child, animation) =>
                     ScaleTransition(scale: animation, child: child),
                 switchInCurve: Curves.bounceIn,
-                //switchOutCurve: Curves.elasticInOut,
                 duration: Duration(milliseconds: 300),
                 child: ended
                     ? AnimatedContainer(
@@ -110,9 +106,7 @@ class _DoneState extends State<Done> {
                     color: Colors.white,
                     fontFamily: 'SanFransisco'),
               ),
-              SizedBox(
-                height: 18,
-              ),
+              SizedBox(height: 18),
               Text(
                 ended
                     ? 'You will recieve your tasty food in \n10 -15 mins'
