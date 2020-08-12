@@ -119,7 +119,13 @@ class _OrderSheetState extends State<OrderSheet> {
                         icon: (Icon(Icons.remove)),
                         color: Colors.grey[400],
                         onPressed: () {
-                          setState(() {});
+                          setState(() {
+                            if (order.quantity <= 1) return;
+                            order = Order(
+                              food: order.food,
+                              quantity: order.quantity - 1,
+                            );
+                          });
                         }),
                     Text('${order.quantity}'),
                     IconButton(
