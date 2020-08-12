@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/models/Order.dart';
 
 class OrderCard extends StatefulWidget {
-  const OrderCard({
-    Key key,
-  }) : super(key: key);
+  final Order order;
+  OrderCard({this.order});
 
   @override
   _OrderCardState createState() => _OrderCardState();
