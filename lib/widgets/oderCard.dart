@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/models/Order.dart';
 
-class OrderCard extends StatefulWidget {
+class OrderCard extends StatelessWidget {
   final Order order;
-  OrderCard({this.order});
+  // final int index;
+  final VoidCallback onDelete;
+  OrderCard({
+    @required this.order,
+    @required this.onDelete,
+    //  @required this.index,
+  });
 
-  @override
-  _OrderCardState createState() => _OrderCardState();
-}
-
-class _OrderCardState extends State<OrderCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      margin: EdgeInsets.only(top: 20),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            'images/burger.png',
-            width: 60,
-          ),
+          Image.asset(order.food.image, width: 60),
+          SizedBox(width: 50),
           Container(
             margin: EdgeInsets.only(top: 20),
             child: Column(
@@ -34,11 +31,8 @@ class _OrderCardState extends State<OrderCard> {
                     fontSize: 17,
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
                 Text(
-                  'AED24',
+                  'AED 24',
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w600,
@@ -47,27 +41,13 @@ class _OrderCardState extends State<OrderCard> {
               ],
             ),
           ),
-          //Spacer(),
-          Container(
-            decoration: BoxDecoration(
-              border:
-                  Border.all(color: Color.fromRGBO(235, 235, 250, 1), width: 2),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                    icon: (Icon(Icons.add)),
-                    color: Color.fromRGBO(235, 235, 250, 1),
-                    onPressed: () {}),
-                Text('1'),
-                IconButton(
-                    icon: (Icon(Icons.add)),
-                    color: Color.fromRGBO(235, 235, 250, 1),
-                    onPressed: () {}),
-              ],
-            ),
-          ),
+          Spacer(),
+          IconButton(
+              icon: Icon(Icons.remove_circle_outline),
+              color: Colors.red,
+              onPressed: () {
+                onDelete();
+              })
         ],
       ),
     );
