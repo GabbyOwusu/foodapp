@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:order_food/providers/CartProvider.dart';
 import 'package:order_food/screens/Done.dart';
 import 'package:order_food/widgets/oderCard.dart';
+import 'package:provider/provider.dart';
 
-class OderScreen extends StatefulWidget {
-  @override
-  _OderScreenState createState() => _OderScreenState();
-}
-
-class _OderScreenState extends State<OderScreen> {
+class OderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<CartProvider>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -44,19 +43,25 @@ class _OderScreenState extends State<OderScreen> {
                     fontWeight: FontWeight.w600,
                     fontFamily: 'SanFransisco'),
               ),
-              Container(
-                // height: 300,
-                child: Expanded(
+              if (provider.orders.isNotEmpty)
+                Container(
                   child: ListView(
                     physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
                     children: <Widget>[
-                      OrderCard(),
+                      ...provider.orders.map((order) {
+                        return OrderCard(
+                            onDelete: () {
+                              provider.removeOrder(order);
+                            },
+                            order: order);
+                      }).toList()
                     ],
                   ),
-                ),
-              ),
+                )
+              else
+                Text('Your orders will appear here'),
               SizedBox(
                 height: 20,
               ),
