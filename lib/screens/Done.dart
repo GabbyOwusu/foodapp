@@ -74,21 +74,21 @@ class _DoneState extends State<Done> {
                         child: Stack(
                           children: [
                             SizedBox(
-                              height: 150,
-                              width: 150,
+                              height: 160,
+                              width: 160,
                               child: CircularProgressIndicator(
                                 backgroundColor: Colors.white.withOpacity(0.5),
                                 valueColor:
                                     AlwaysStoppedAnimation(Colors.white),
-                                strokeWidth: 5,
+                                strokeWidth: 7,
                               ),
                             ),
                             Positioned(
-                              top: 37,
+                              top: 36,
                               left: 35,
                               child: Image.asset(
                                 'images/faceid.png',
-                                width: 80,
+                                width: 90,
                                 color: Colors.white,
                               ),
                             ),
