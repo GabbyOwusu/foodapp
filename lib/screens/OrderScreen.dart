@@ -44,7 +44,19 @@ class _OderScreenState extends State<OderScreen> {
                     fontWeight: FontWeight.w600,
                     fontFamily: 'SanFransisco'),
               ),
-              OrderCard(),
+              Container(
+                // height: 300,
+                child: Expanded(
+                  child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    children: <Widget>[
+                      OrderCard(),
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 20,
               ),
