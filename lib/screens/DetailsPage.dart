@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:order_food/models/Order.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/screens/OrderScreen.dart';
 import 'package:order_food/widgets/foodgrid.dart';
@@ -22,7 +23,13 @@ class _DetailsState extends State<Details> {
 
   bool active = false;
   bool adToCart = false;
-  int orderNumber = 1;
+  Order order;
+
+  @override
+  void initState() {
+    order = Order(food: widget.foodcard);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -193,7 +200,7 @@ class _DetailsState extends State<Details> {
                     ),
                     child: Center(
                       child: Text(
-                        '$orderNumber',
+                        '${order.quantity}',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
