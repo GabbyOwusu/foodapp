@@ -61,7 +61,11 @@ class OderScreen extends StatelessWidget {
                   ),
                 )
               else
-                Text('Your orders will appear here'),
+                Center(
+                  child: Container(
+                      margin: EdgeInsets.only(top: 20, bottom: 30),
+                      child: Text('Your orders will appear here')),
+                ),
               SizedBox(
                 height: 20,
               ),
@@ -231,47 +235,48 @@ class OderScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Done()),
-          );
-          //   PageRouteBuilder(
-          //     transitionDuration: Duration(seconds: 1),
-          //     transitionsBuilder: (context, animation, secondAnimation, child) {
-          //       animation = CurvedAnimation(
-          //           parent: animation,
-          //           curve: Interval(0.500, 1.000, curve: Curves.easeIn));
-          //       return ScaleTransition(
-          //         scale: animation,
-          //         child: child,
-          //         alignment: Alignment.center,
-          //       );
-          //     },
-          //     pageBuilder: (context, animation, secondAnimation) => Done(),
-          //   ),
-          // );
-        },
-        child: Container(
-          margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Center(
-            child: Text(
-              'Pay AED 24',
-              style: TextStyle(
-                fontFamily: 'SanFransisco',
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
-      ),
+      bottomNavigationBar: provider.orders.isNotEmpty
+          ? GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Done()),
+                );
+                //   PageRouteBuilder(
+                //     transitionDuration: Duration(seconds: 1),
+                //     transitionsBuilder: (context, animation, secondAnimation, child) {
+                //       animation = CurvedAnimation(
+                //           parent: animation,
+                //           curve: Interval(0.500, 1.000, curve: Curves.easeIn));
+                //       return ScaleTransition(
+                //         scale: animation,
+                //         child: child,
+                //         alignment: Alignment.center,
+                //       );
+                //     },
+                //     pageBuilder: (context, animation, secondAnimation) => Done(),
+                //   ),
+                // );
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Center(
+                  child: Text(
+                    'Pay AED 24',
+                    style: TextStyle(
+                      fontFamily: 'SanFransisco',
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ))
+          : Text(' '),
     );
   }
 }
