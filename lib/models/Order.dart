@@ -1,10 +1,10 @@
 import 'package:order_food/models/FoodCarouselCard.dart';
 
 class Order {
-  int quantity = 0;
+  final int quantity;
   final FoodCard food;
 
-  Order({this.food, this.quantity});
+  Order({this.food, this.quantity = 1});
   int get hashCode => this.hashCode;
 
   bool operator ==(dynamic other) {
