@@ -3,12 +3,11 @@ import 'package:order_food/models/Order.dart';
 
 class OrderCard extends StatelessWidget {
   final Order order;
-  // final int index;
+
   final VoidCallback onDelete;
   OrderCard({
     @required this.order,
     @required this.onDelete,
-    //  @required this.index,
   });
 
   @override
