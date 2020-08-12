@@ -6,6 +6,7 @@ import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/screens/OrderScreen.dart';
 import 'package:order_food/widgets/foodgrid.dart';
 import 'package:order_food/widgets/snackList.dart';
+import 'package:order_food/providers/CartProvider.dart';
 import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {
@@ -183,71 +184,75 @@ class _DetailsState extends State<Details> {
               ),
             ],
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 80,
-              padding: EdgeInsets.all(10),
-              color: Colors.white,
-              child: Row(
-                children: [
-                  Container(
-                    height: 40,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(248, 242, 255, 1).withOpacity(1),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '${order.quantity}',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    'AED24',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => OderScreen(),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      width: 200,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'View cart',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'SanFransisco',
-                            height: 1.3,
-                            fontSize: 20,
+          Provider.of<CartProvider>(context).orders.length >= 1
+              ? Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 80,
+                    padding: EdgeInsets.all(10),
+                    color: Colors.white,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 40,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color:
+                                Color.fromRGBO(248, 242, 255, 1).withOpacity(1),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '${Provider.of<CartProvider>(context).orders.length}',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          'AED24',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 20),
+                        ),
+                        Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OderScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 200,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'View cart',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'SanFransisco',
+                                  height: 1.3,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          )
+                )
+              : Text(''),
         ],
       ),
     );
