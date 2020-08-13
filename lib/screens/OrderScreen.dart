@@ -5,10 +5,15 @@ import 'package:order_food/screens/Done.dart';
 import 'package:order_food/widgets/oderCard.dart';
 import 'package:provider/provider.dart';
 
-class OderScreen extends StatelessWidget {
+class OderScreen extends StatefulWidget {
+  @override
+  _OderScreenState createState() => _OderScreenState();
+}
+
+class _OderScreenState extends State<OderScreen> {
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<CartProvider>(context, listen: false);
+    final provider = Provider.of<CartProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -53,7 +58,8 @@ class OderScreen extends StatelessWidget {
                       ...provider.orders.map((order) {
                         return OrderCard(
                             onDelete: () {
-                              provider.removeOrder(order);
+                              Provider.of<CartProvider>(context, listen: false)
+                                  .removeOrder(order);
                             },
                             order: order);
                       }).toList()
@@ -242,21 +248,6 @@ class OderScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(builder: (context) => Done()),
                 );
-                //   PageRouteBuilder(
-                //     transitionDuration: Duration(seconds: 1),
-                //     transitionsBuilder: (context, animation, secondAnimation, child) {
-                //       animation = CurvedAnimation(
-                //           parent: animation,
-                //           curve: Interval(0.500, 1.000, curve: Curves.easeIn));
-                //       return ScaleTransition(
-                //         scale: animation,
-                //         child: child,
-                //         alignment: Alignment.center,
-                //       );
-                //     },
-                //     pageBuilder: (context, animation, secondAnimation) => Done(),
-                //   ),
-                // );
               },
               child: Container(
                 margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
