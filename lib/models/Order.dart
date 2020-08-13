@@ -1,4 +1,4 @@
-import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:order_food/models/FoodCarouselModel.dart';
 
 class Order {
   final int quantity;
