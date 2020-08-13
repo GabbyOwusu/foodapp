@@ -80,10 +80,11 @@ class _DetailsState extends State<Details> {
                         Text(
                           widget.foodcard.title,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 26,
-                              fontFamily: 'SanFransisco',
-                              letterSpacing: 0.5),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 26,
+                            fontFamily: 'SanFransisco',
+                            letterSpacing: 0.5,
+                          ),
                         ),
                         SizedBox(height: 30),
                         Padding(
