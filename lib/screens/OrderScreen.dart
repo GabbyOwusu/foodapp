@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/providers/CartProvider.dart';
 import 'package:order_food/screens/Done.dart';
-import 'package:order_food/widgets/oderCard.dart';
+import 'package:order_food/widgets/OderCard.dart';
 import 'package:provider/provider.dart';
 
 class OderScreen extends StatefulWidget {
@@ -44,9 +44,10 @@ class _OderScreenState extends State<OderScreen> {
               Text(
                 'Your order',
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'SanFransisco'),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'SanFransisco',
+                ),
               ),
               if (provider.orders.isNotEmpty)
                 Container(
@@ -121,17 +122,19 @@ class _OderScreenState extends State<OderScreen> {
                       Text(
                         'Subtotal',
                         style: TextStyle(
-                            fontFamily: 'SanFransisco',
-                            fontSize: 17,
-                            color: Colors.grey),
+                          fontFamily: 'SanFransisco',
+                          fontSize: 17,
+                          color: Colors.grey,
+                        ),
                       ),
                       SizedBox(height: 20),
                       Text(
                         'Delivery fee(free)',
                         style: TextStyle(
-                            fontFamily: 'SanFransisco',
-                            fontSize: 17,
-                            color: Colors.lightGreen),
+                          fontFamily: 'SanFransisco',
+                          fontSize: 17,
+                          color: Colors.lightGreen,
+                        ),
                       ),
                     ],
                   ),
@@ -179,9 +182,10 @@ class _OderScreenState extends State<OderScreen> {
                   Text(
                     'AED 24',
                     style: TextStyle(
-                        fontFamily: 'SanFransisco',
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600),
+                      fontFamily: 'SanFransisco',
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ],
               ),
@@ -189,9 +193,10 @@ class _OderScreenState extends State<OderScreen> {
               Text(
                 'Pay with',
                 style: TextStyle(
-                    fontFamily: 'SanFransisco',
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600),
+                  fontFamily: 'SanFransisco',
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               SizedBox(height: 20),
               Row(
@@ -200,13 +205,9 @@ class _OderScreenState extends State<OderScreen> {
                     height: 40,
                     width: 40,
                     padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                    ),
-                    child: Image.asset(
-                      'images/applepay.png',
-                      color: Colors.white,
-                    ),
+                    decoration: BoxDecoration(color: Colors.black),
+                    child:
+                        Image.asset('images/applepay.png', color: Colors.white),
                   ),
                   SizedBox(width: 20),
                   Text(
@@ -267,16 +268,11 @@ Widget item({String title, String text, String image}) {
       color: Colors.white,
       borderRadius: BorderRadius.circular(10),
     ),
-    margin: EdgeInsets.only(
-      top: 20,
-    ),
+    margin: EdgeInsets.only(top: 20),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Image.asset(
-          image,
-          width: 50,
-        ),
+        Image.asset(image, width: 50),
         Container(
           margin: EdgeInsets.only(top: 20),
           child: Column(
@@ -289,15 +285,10 @@ Widget item({String title, String text, String image}) {
                   fontSize: 17,
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10),
               Text(
                 text,
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
               ),
             ],
           ),
@@ -317,11 +308,8 @@ Widget item({String title, String text, String image}) {
               ),
             ),
             child: Center(
-                child: Icon(
-              Icons.add,
-              color: Colors.black26,
-              size: 15,
-            )),
+              child: Icon(Icons.add, color: Colors.black26, size: 15),
+            ),
           ),
         ),
       ],
