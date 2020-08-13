@@ -88,13 +88,15 @@ class _FoodGridState extends State<FoodGrid> {
                           color: Colors.transparent,
                           border: Border.all(
                             width: 2,
-                            color: Color.fromRGBO(235, 235, 250, 1),
+                            color: active
+                                ? Colors.white
+                                : Color.fromRGBO(235, 235, 250, 1),
                           ),
                         ),
                         child: Center(
                             child: Icon(
                           Icons.add,
-                          color: Colors.black26,
+                          color: active ? Colors.white : Colors.black26,
                           size: 15,
                         )),
                       ),
