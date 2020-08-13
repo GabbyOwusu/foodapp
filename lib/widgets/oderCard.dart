@@ -25,17 +25,11 @@ class OrderCard extends StatelessWidget {
               children: [
                 Text(
                   'Big Mac Burger',
-                  style: TextStyle(
-                    fontFamily: 'SanFransisco',
-                    fontSize: 17,
-                  ),
+                  style: TextStyle(fontFamily: 'SanFransisco', fontSize: 17),
                 ),
                 Text(
                   'AED 24',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
