@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselCard.dart';
-import 'package:order_food/widgets/orderSheet.dart';
+import 'package:order_food/widgets/OrderSheet.dart';
 
 class FoodGrid extends StatefulWidget {
   final int index;
