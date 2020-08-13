@@ -26,7 +26,6 @@ class _DoneState extends State<Done> {
           context,
           MaterialPageRoute(builder: (context) => MyHomePage()),
         );
-        // Navigator.pop(context);
       });
     });
   }
