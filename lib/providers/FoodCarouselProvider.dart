@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/models/FoodCarouselCard.dart';
+import 'package:order_food/models/FoodCarouselModel.dart';
 import 'package:order_food/providers/BaseProvider.dart';
 
 class CardProvider extends BaseProvider {
