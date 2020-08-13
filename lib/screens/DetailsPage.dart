@@ -4,8 +4,8 @@ import 'package:order_food/models/FoodCarouselCard.dart';
 import 'package:order_food/models/Order.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
 import 'package:order_food/screens/OrderScreen.dart';
-import 'package:order_food/widgets/foodgrid.dart';
-import 'package:order_food/widgets/snackList.dart';
+import 'package:order_food/widgets/Foodgrid.dart';
+import 'package:order_food/widgets/SnackList.dart';
 import 'package:order_food/providers/CartProvider.dart';
 import 'package:provider/provider.dart';
 
