@@ -58,8 +58,11 @@ class _OderScreenState extends State<OderScreen> {
                       ...provider.orders.map((order) {
                         return OrderCard(
                             onDelete: () {
-                              Provider.of<CartProvider>(context, listen: false)
-                                  .removeOrder(order);
+                              setState(() {
+                                Provider.of<CartProvider>(context,
+                                        listen: false)
+                                    .removeOrder(order);
+                              });
                             },
                             order: order);
                       }).toList()
