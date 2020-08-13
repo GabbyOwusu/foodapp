@@ -15,7 +15,6 @@ class _DoneState extends State<Done> {
   @override
   void initState() {
     super.initState();
-
     Future.delayed(Duration(seconds: 3), () {
       setState(() {
         endSize = 500;
@@ -24,7 +23,9 @@ class _DoneState extends State<Done> {
       Future.delayed(Duration(milliseconds: 1600), () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => MyHomePage()),
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(),
+          ),
         );
       });
     });
