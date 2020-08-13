@@ -72,12 +72,11 @@ class _OderScreenState extends State<OderScreen> {
               else
                 Center(
                   child: Container(
-                      margin: EdgeInsets.only(top: 20, bottom: 30),
-                      child: Text('Your orders will appear here')),
+                    margin: EdgeInsets.only(top: 20, bottom: 30),
+                    child: Text('Your orders will appear here'),
+                  ),
                 ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               Text(
                 'You might also like',
                 style: TextStyle(
@@ -85,9 +84,7 @@ class _OderScreenState extends State<OderScreen> {
                     fontWeight: FontWeight.w600,
                     fontFamily: 'SanFransisco'),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               SingleChildScrollView(
                 primary: false,
                 scrollDirection: Axis.horizontal,
@@ -98,9 +95,7 @@ class _OderScreenState extends State<OderScreen> {
                       image: 'images/burger.png',
                       text: 'AED 24',
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
+                    SizedBox(width: 20),
                     item(
                       title: 'Coca-Cola Zero',
                       image: 'images/burger.png',
@@ -117,9 +112,7 @@ class _OderScreenState extends State<OderScreen> {
                     fontWeight: FontWeight.w600,
                     fontFamily: 'SanFransisco'),
               ),
-              SizedBox(
-                height: 30,
-              ),
+              SizedBox(height: 30),
               Row(
                 children: [
                   Column(
@@ -132,9 +125,7 @@ class _OderScreenState extends State<OderScreen> {
                             fontSize: 17,
                             color: Colors.grey),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      SizedBox(height: 20),
                       Text(
                         'Delivery fee(free)',
                         style: TextStyle(
@@ -155,9 +146,7 @@ class _OderScreenState extends State<OderScreen> {
                             fontSize: 17,
                             fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      SizedBox(height: 20),
                       Text(
                         'AED 0',
                         style: TextStyle(
@@ -196,9 +185,7 @@ class _OderScreenState extends State<OderScreen> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               Text(
                 'Pay with',
                 style: TextStyle(
@@ -206,9 +193,7 @@ class _OderScreenState extends State<OderScreen> {
                     fontSize: 17,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Container(
@@ -223,9 +208,7 @@ class _OderScreenState extends State<OderScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
+                  SizedBox(width: 20),
                   Text(
                     'Apple Pay',
                     style: TextStyle(
@@ -237,9 +220,7 @@ class _OderScreenState extends State<OderScreen> {
                   Icon(Icons.arrow_forward)
                 ],
               ),
-              SizedBox(
-                height: 30,
-              )
+              SizedBox(height: 30),
             ],
           ),
         ),
@@ -249,7 +230,9 @@ class _OderScreenState extends State<OderScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Done()),
+                  MaterialPageRoute(
+                    builder: (context) => Done(),
+                  ),
                 );
               },
               child: Container(
