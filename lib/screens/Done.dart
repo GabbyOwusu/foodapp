@@ -23,9 +23,7 @@ class _DoneState extends State<Done> {
       Future.delayed(Duration(milliseconds: 1600), () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(),
-          ),
+          MaterialPageRoute(builder: (context) => MyHomePage()),
         );
       });
     });
@@ -63,11 +61,7 @@ class _DoneState extends State<Done> {
                         ),
                         duration: Duration(milliseconds: 300),
                         child: Center(
-                          child: Icon(
-                            Icons.done,
-                            color: Colors.red,
-                            size: 70,
-                          ),
+                          child: Icon(Icons.done, color: Colors.red, size: 70),
                         ),
                       )
                     : Container(
@@ -77,20 +71,17 @@ class _DoneState extends State<Done> {
                               height: 160,
                               width: 160,
                               child: CircularProgressIndicator(
-                                backgroundColor: Colors.white.withOpacity(0.5),
-                                valueColor:
-                                    AlwaysStoppedAnimation(Colors.white),
-                                strokeWidth: 7,
-                              ),
+                                  backgroundColor:
+                                      Colors.white.withOpacity(0.5),
+                                  valueColor:
+                                      AlwaysStoppedAnimation(Colors.white),
+                                  strokeWidth: 7),
                             ),
                             Positioned(
                               top: 36,
                               left: 35,
-                              child: Image.asset(
-                                'images/faceid.png',
-                                width: 90,
-                                color: Colors.white,
-                              ),
+                              child: Image.asset('images/faceid.png',
+                                  width: 90, color: Colors.white),
                             ),
                           ],
                         ),
