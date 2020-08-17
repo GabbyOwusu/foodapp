@@ -99,7 +99,8 @@ class _OrderSheetState extends State<OrderSheet> {
           Container(
             height: 150,
             child: ListView.builder(
-              itemBuilder: (context, index) => snackSuggestions(),
+              itemBuilder: (context, index) => snackSuggestions(
+                  index: index, suggestions: widget.burgerImage),
               itemCount: 4,
               scrollDirection: Axis.horizontal,
             ),
@@ -181,7 +182,7 @@ class _OrderSheetState extends State<OrderSheet> {
   }
 }
 
-Widget snackSuggestions() {
+Widget snackSuggestions({FoodCard suggestions, int index}) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Column(
@@ -192,7 +193,7 @@ Widget snackSuggestions() {
           width: 90,
           decoration: BoxDecoration(
               color: Colors.grey[100].withOpacity(0.9), shape: BoxShape.circle),
-          child: Image.asset('images/burger.png'),
+          child: Image.asset(suggestions.snacks[index]),
         ),
         Text('Big Bun')
       ],
