@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 class FoodCarousel extends StatefulWidget {
   final bool active;
-
   final FoodCard foodCard;
 
   FoodCarousel({
