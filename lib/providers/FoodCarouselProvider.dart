@@ -10,6 +10,7 @@ class CardProvider extends BaseProvider {
         title: 'McDonnald\'s',
         headingImage: 'images/macdonnalds.png',
         image: 'images/food.png',
+        description: 'Burgers, American',
         foodName: [
           'Normal Meal',
           'Extra Small Meal',
@@ -34,6 +35,7 @@ class CardProvider extends BaseProvider {
         ],
       ),
       FoodCard(
+          description: 'Coffe Beverly',
           color: Color.fromRGBO(0, 150, 127, 1),
           title: 'Starbucks',
           headingImage: 'images/starbucks.png',
@@ -61,6 +63,7 @@ class CardProvider extends BaseProvider {
             'images/hotdog1.png',
           ]),
       FoodCard(
+        description: 'Sandwhich, Healthy',
         color: Color.fromRGBO(26, 186, 24, 1),
         title: 'Subway',
         headingImage: 'images/subway.png',
@@ -89,6 +92,7 @@ class CardProvider extends BaseProvider {
         ],
       ),
       FoodCard(
+          description: 'Chicken, American',
           color: Color.fromRGBO(255, 87, 96, 1),
           title: 'KFC',
           headingImage: 'images/kfc.png',
@@ -120,6 +124,7 @@ class CardProvider extends BaseProvider {
         title: 'Dominos',
         headingImage: 'images/domino.png',
         image: 'images/pizza.png',
+        description: 'Pizza italian',
         foodName: [
           'Normal Meal',
           'Extra Small Meal',
@@ -144,6 +149,7 @@ class CardProvider extends BaseProvider {
         ],
       ),
       FoodCard(
+          description: 'Burgers, American',
           color: Colors.black,
           title: 'Shake Shack',
           headingImage: 'images/shake.png',
