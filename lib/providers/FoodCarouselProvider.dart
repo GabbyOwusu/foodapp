@@ -10,6 +10,13 @@ class CardProvider extends BaseProvider {
         title: 'McDonnald\'s',
         headingImage: 'images/macdonnalds.png',
         image: 'images/food.png',
+        foodName: [
+          'Normal Meal',
+          'Extra Small Meal',
+          'Fries Only',
+          'Spicy Fries',
+          'Extra Spicy Fries',
+        ],
         snacks: [
           'images/food.png',
           'images/fries1.png',
@@ -31,6 +38,13 @@ class CardProvider extends BaseProvider {
           title: 'Starbucks',
           headingImage: 'images/starbucks.png',
           image: 'images/coffee2.png',
+          foodName: [
+            'Normal Meal',
+            'Extra Small Meal',
+            'Fries Only',
+            'Spicy Fries',
+            'Extra Spicy Fries',
+          ],
           snacks: [
             'images/subway1.png',
             'images/fries1.png',
@@ -51,6 +65,13 @@ class CardProvider extends BaseProvider {
         title: 'Subway',
         headingImage: 'images/subway.png',
         image: 'images/subwayfood.png',
+        foodName: [
+          'Normal Meal',
+          'Extra Small Meal',
+          'Fries Only',
+          'Spicy Fries',
+          'Extra Spicy Fries',
+        ],
         snacks: [
           'images/hotdog1.png',
           'images/hotdog2.png',
@@ -72,6 +93,13 @@ class CardProvider extends BaseProvider {
           title: 'KFC',
           headingImage: 'images/kfc.png',
           image: 'images/chickenbucket.png',
+          foodName: [
+            'Normal Meal',
+            'Extra Small Meal',
+            'Fries Only',
+            'Spicy Fries',
+            'Extra Spicy Fries',
+          ],
           snacks: [
             'images/fies4.png',
             'images/chicken6.png',
@@ -92,6 +120,13 @@ class CardProvider extends BaseProvider {
         title: 'Dominos',
         headingImage: 'images/domino.png',
         image: 'images/pizza.png',
+        foodName: [
+          'Normal Meal',
+          'Extra Small Meal',
+          'Fries Only',
+          'Spicy Fries',
+          'Extra Spicy Fries',
+        ],
         snacks: [
           'images/fries1.png',
           'images/fries1.png',
@@ -113,6 +148,13 @@ class CardProvider extends BaseProvider {
           title: 'Shake Shack',
           headingImage: 'images/shake.png',
           image: 'images/burger.png',
+          foodName: [
+            'Normal Meal',
+            'Extra Small Meal',
+            'Fries Only',
+            'Spicy Fries',
+            'Extra Spicy Fries',
+          ],
           snacks: [
             'images/burger5.png',
             'images/burger3.png',
