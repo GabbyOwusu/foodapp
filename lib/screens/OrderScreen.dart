@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:order_food/models/FoodCarouselModel.dart';
 import 'package:order_food/providers/CartProvider.dart';
 import 'package:order_food/screens/Done.dart';
 import 'package:order_food/widgets/OderCard.dart';
 import 'package:provider/provider.dart';
 
 class OderScreen extends StatefulWidget {
+  final FoodCard name;
+  OderScreen({@required this.name});
+
   @override
   _OderScreenState createState() => _OderScreenState();
 }
@@ -28,7 +32,7 @@ class _OderScreenState extends State<OderScreen> {
             }),
         elevation: 0,
         title: Text(
-          'MacDonalds',
+          'Big Mac',
           style: TextStyle(
               color: Colors.black,
               fontFamily: 'SanFransisco',
@@ -58,6 +62,8 @@ class _OderScreenState extends State<OderScreen> {
                     children: <Widget>[
                       ...provider.orders.map((order) {
                         return OrderCard(
+                            // index: ,
+                            foodTitle: widget.name,
                             onDelete: () {
                               setState(() {
                                 Provider.of<CartProvider>(context,
@@ -92,14 +98,14 @@ class _OderScreenState extends State<OderScreen> {
                 child: Row(
                   children: [
                     item(
-                      title: 'Coca-Cola Zero',
-                      image: 'images/burger.png',
+                      title: 'Coca-Cola Zero Sugar',
+                      image: 'images/coke1.png',
                       text: 'AED 24',
                     ),
                     SizedBox(width: 20),
                     item(
                       title: 'Coca-Cola Zero',
-                      image: 'images/burger.png',
+                      image: 'images/coke1.png',
                       text: 'AED 24',
                     ),
                   ],
@@ -262,7 +268,6 @@ class _OderScreenState extends State<OderScreen> {
 Widget item({String title, String text, String image}) {
   return Container(
     padding: EdgeInsets.only(left: 10),
-    width: 270,
     height: 100,
     decoration: BoxDecoration(
       color: Colors.white,
@@ -272,7 +277,11 @@ Widget item({String title, String text, String image}) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Image.asset(image, width: 50),
+        SizedBox(
+          height: 50,
+          width: 50,
+          child: Image.asset(image),
+        ),
         Container(
           margin: EdgeInsets.only(top: 20),
           child: Column(
