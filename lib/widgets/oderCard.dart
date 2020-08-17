@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/models/FoodCarouselModel.dart';
 import 'package:order_food/models/Order.dart';
 
 class OrderCard extends StatelessWidget {
+  final FoodCard foodTitle;
   final Order order;
+  //final int index;
 
   final VoidCallback onDelete;
   OrderCard({
+    // this.index,
+    @required this.foodTitle,
     @required this.order,
     @required this.onDelete,
   });
