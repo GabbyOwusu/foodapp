@@ -14,7 +14,7 @@ class SnackList extends StatefulWidget {
 
 class _SnackListState extends State<SnackList> {
   CardProvider get provider {
-    return Provider.of<CardProvider>(context, listen: false);
+    return Provider.of<CardProvider>(context);
   }
 
   bool active = false;
@@ -31,6 +31,7 @@ class _SnackListState extends State<SnackList> {
         });
       },
       child: Container(
+        padding: EdgeInsets.only(top: 20, bottom: 20),
         margin: EdgeInsets.only(left: 20),
         width: 100,
         decoration: BoxDecoration(
@@ -44,12 +45,10 @@ class _SnackListState extends State<SnackList> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'images/food.png',
+                widget.foodCardimage.snacks[widget.index],
                 width: 50,
               ),
-              SizedBox(
-                height: 10,
-              ),
+              Spacer(),
               Text(
                 'Breakfast',
                 style: TextStyle(
