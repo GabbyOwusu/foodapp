@@ -32,13 +32,13 @@ class _FoodGridState extends State<FoodGrid> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: EdgeInsets.only(top: 20),
           child: Column(
             children: <Widget>[
               Center(
                 child: Image.asset(
                   widget.gridMenu.menu[widget.index],
-                  width: 100,
+                  width: 80,
                 ),
               ),
               Spacer(),
