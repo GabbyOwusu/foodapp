@@ -21,6 +21,15 @@ class _SnackListState extends State<SnackList> {
   FoodCard foodCardimage;
   Color color;
 
+  List<String> titles = [
+    'Side dish 1',
+    'Extra',
+    'Appetizer',
+    'Dessert',
+    'Side dish 5',
+    'Side dish 6',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -50,7 +59,7 @@ class _SnackListState extends State<SnackList> {
               ),
               Spacer(),
               Text(
-                'Breakfast',
+                titles[widget.index],
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontFamily: 'SanFransisco',
