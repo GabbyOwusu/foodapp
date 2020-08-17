@@ -62,7 +62,7 @@ class _OrderSheetState extends State<OrderSheet> {
           ),
           SizedBox(height: 20),
           Text(
-            'Big Mac Burger',
+            widget.burgerImage.foodName[widget.index],
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -183,6 +183,14 @@ class _OrderSheetState extends State<OrderSheet> {
 }
 
 Widget snackSuggestions({FoodCard suggestions, int index}) {
+  List<String> titles = [
+    'Side dish 1',
+    'Extra',
+    'Appetizer',
+    'Dessert',
+    'Side dish 5',
+    'Side dish 6',
+  ];
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Column(
@@ -195,7 +203,7 @@ Widget snackSuggestions({FoodCard suggestions, int index}) {
               color: Colors.grey[100].withOpacity(0.9), shape: BoxShape.circle),
           child: Image.asset(suggestions.snacks[index]),
         ),
-        Text('Big Bun')
+        Text(titles[index])
       ],
     ),
   );
