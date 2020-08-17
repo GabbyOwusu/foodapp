@@ -224,7 +224,9 @@ class _DetailsState extends State<Details> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => OderScreen(),
+                                builder: (context) => OderScreen(
+                                  name: widget.foodcard,
+                                ),
                               ),
                             );
                           },
