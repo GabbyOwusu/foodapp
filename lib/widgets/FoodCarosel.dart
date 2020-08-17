@@ -95,7 +95,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                               color: Colors.grey.withOpacity(0.5)),
                         ),
                         Text(
-                          'Burgers American',
+                          widget.foodCard.description,
                           style: TextStyle(
                             fontSize: 15,
                             color: Colors.grey.withOpacity(0.5),
