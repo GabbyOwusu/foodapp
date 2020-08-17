@@ -4,14 +4,13 @@ class FoodCard {
   String headingImage;
   int height;
   Color color;
-  String title;
+  String title, description;
   String image;
-  List<String> snacks;
-  List<String> menu;
-  List<String> foodName;
+  List<String> snacks, menu, foodName;
 
   FoodCard(
       {this.color,
+      this.description,
       this.foodName,
       this.snacks,
       this.headingImage,
