@@ -47,7 +47,7 @@ class _FoodGridState extends State<FoodGrid> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Big Breakfast meal',
+                    widget.gridMenu.foodName[widget.index],
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontFamily: 'SanFransisco',
