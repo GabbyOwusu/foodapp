@@ -8,9 +8,11 @@ class FoodCard {
   String image;
   List<String> snacks;
   List<String> menu;
+  List<String> foodName;
 
   FoodCard(
       {this.color,
+      this.foodName,
       this.snacks,
       this.headingImage,
       this.image,
