@@ -62,7 +62,7 @@ class _FoodGridState extends State<FoodGrid> {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      'AED',
+                      'AED 24',
                       style: TextStyle(
                         color: active ? Colors.white : Colors.black,
                       ),
