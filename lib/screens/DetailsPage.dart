@@ -100,7 +100,7 @@ class _DetailsState extends State<Details> {
                                 ),
                               ),
                               Text(
-                                'Burgers American',
+                                widget.foodcard.description,
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.grey.withOpacity(0.8),
