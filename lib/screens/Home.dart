@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 300),
                   decoration: BoxDecoration(
-                    color: color,
+                    color: color ?? Color.fromRGBO(26, 186, 24, 1),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
