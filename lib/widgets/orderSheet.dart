@@ -201,7 +201,13 @@ Widget snackSuggestions({FoodCard suggestions, int index}) {
           width: 90,
           decoration: BoxDecoration(
               color: Colors.grey[100].withOpacity(0.9), shape: BoxShape.circle),
-          child: Image.asset(suggestions.snacks[index]),
+          child: SizedBox(
+            height: 20,
+            width: 20,
+            child: Image.asset(
+              suggestions.snacks[index],
+            ),
+          ),
         ),
         Text(titles[index])
       ],
