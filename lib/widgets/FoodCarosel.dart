@@ -66,14 +66,15 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: widget.foodCard.color,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Image.asset(widget.foodCard.image, width: 200),
-                        )),
+                      height: 250,
+                      decoration: BoxDecoration(
+                        color: widget.foodCard.color,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Image.asset(widget.foodCard.image, width: 230),
+                      ),
+                    ),
                     SizedBox(height: 30),
                     Text(
                       widget.foodCard.title,
