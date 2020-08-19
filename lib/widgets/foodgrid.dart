@@ -28,7 +28,7 @@ class _FoodGridState extends State<FoodGrid> {
         decoration: BoxDecoration(
           color: active
               ? Colors.red
-              : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.2),
+              : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.5),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
