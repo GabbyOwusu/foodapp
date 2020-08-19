@@ -35,7 +35,7 @@ class _OrderSheetState extends State<OrderSheet> {
       ),
       height: 680,
       decoration: BoxDecoration(
-        color: Colors.white, //Colors.grey[100],
+        color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -111,7 +111,9 @@ class _OrderSheetState extends State<OrderSheet> {
               Container(
                 margin: EdgeInsets.only(left: 20, top: 10),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey[400], width: 2),
+                  border: Border.all(
+                      color: Color.fromRGBO(235, 235, 250, 1).withOpacity(1),
+                      width: 3),
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Row(
