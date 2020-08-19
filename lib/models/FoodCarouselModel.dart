@@ -6,7 +6,9 @@ class FoodCard {
   Color color;
   String title, description;
   String image;
-  List<String> snacks, menu, foodName;
+  List<String> snacks;
+  List<String> menu;
+  List<String> foodName;
 
   FoodCard(
       {this.color,
