@@ -62,7 +62,6 @@ class _OderScreenState extends State<OderScreen> {
                     children: <Widget>[
                       ...provider.orders.map((order) {
                         return OrderCard(
-                            // index: ,
                             foodTitle: widget.name,
                             onDelete: () {
                               setState(() {
