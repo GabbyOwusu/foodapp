@@ -11,7 +11,9 @@ import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {
   final FoodCard foodcard;
-  Details({@required this.foodcard});
+  Details({
+    @required this.foodcard,
+  });
 
   @override
   _DetailsState createState() => _DetailsState();
