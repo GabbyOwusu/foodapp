@@ -8,7 +8,9 @@ import 'package:provider/provider.dart';
 
 class OderScreen extends StatefulWidget {
   final FoodCard name;
-  OderScreen({@required this.name});
+  OderScreen({
+    @required this.name,
+  });
 
   @override
   _OderScreenState createState() => _OderScreenState();
@@ -31,13 +33,6 @@ class _OderScreenState extends State<OderScreen> {
               Navigator.pop(context);
             }),
         elevation: 0,
-        title: Text(
-          'Big Mac',
-          style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'SanFransisco',
-              fontWeight: FontWeight.bold),
-        ),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -60,18 +55,18 @@ class _OderScreenState extends State<OderScreen> {
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
                     children: <Widget>[
-                      ...provider.orders.map((order) {
+                      ...provider.orders.map((e) {
                         return OrderCard(
                             foodTitle: widget.name,
                             onDelete: () {
                               setState(() {
                                 Provider.of<CartProvider>(context,
                                         listen: false)
-                                    .removeOrder(order);
+                                    .removeOrder(e);
                               });
                             },
-                            order: order);
-                      }).toList()
+                            order: e);
+                      }).toList(),
                     ],
                   ),
                 )
