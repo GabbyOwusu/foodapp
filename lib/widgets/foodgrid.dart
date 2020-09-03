@@ -27,7 +27,7 @@ class _FoodGridState extends State<FoodGrid> {
         duration: Duration(milliseconds: 100),
         decoration: BoxDecoration(
           color: active
-              ? Colors.red
+              ? widget.gridMenu.color
               : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.5),
           borderRadius: BorderRadius.circular(10),
         ),
