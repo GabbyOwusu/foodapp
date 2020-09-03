@@ -11,9 +11,7 @@ import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {
   final FoodCard foodcard;
-  Details({
-    @required this.foodcard,
-  });
+  Details({@required this.foodcard});
 
   @override
   _DetailsState createState() => _DetailsState();
@@ -170,9 +168,10 @@ class _DetailsState extends State<Details> {
                               physics: NeverScrollableScrollPhysics(),
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      mainAxisSpacing: 10,
-                                      crossAxisSpacing: 10),
+                                crossAxisCount: 2,
+                                mainAxisSpacing: 10,
+                                crossAxisSpacing: 10,
+                              ),
                               itemCount: widget.foodcard.menu.length,
                               itemBuilder: (context, index) {
                                 return FoodGrid(
