@@ -38,7 +38,6 @@ class _SnackListState extends State<SnackList> {
       onTap: () {
         setState(() {
           active = !active;
-          // color = provider.items[widget.index].color;
         });
       },
       child: Container(
