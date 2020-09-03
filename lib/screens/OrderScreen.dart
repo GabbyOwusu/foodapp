@@ -8,9 +8,7 @@ import 'package:provider/provider.dart';
 
 class OderScreen extends StatefulWidget {
   final FoodCard name;
-  OderScreen({
-    @required this.name,
-  });
+  OderScreen({@required this.name});
 
   @override
   _OderScreenState createState() => _OderScreenState();
