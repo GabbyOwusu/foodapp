@@ -6,8 +6,11 @@ import 'package:provider/provider.dart';
 class SnackList extends StatefulWidget {
   final int index;
   final FoodCard foodCardimage;
-
-  SnackList({@required this.index, @required this.foodCardimage});
+  final Color color;
+  SnackList(
+      {@required this.index,
+      @required this.foodCardimage,
+      @required this.color});
   @override
   _SnackListState createState() => _SnackListState();
 }
@@ -19,7 +22,6 @@ class _SnackListState extends State<SnackList> {
 
   bool active = false;
   FoodCard foodCardimage;
-  Color color;
 
   List<String> titles = [
     'Side dish 1',
@@ -36,16 +38,19 @@ class _SnackListState extends State<SnackList> {
       onTap: () {
         setState(() {
           active = !active;
-          color = provider.items[widget.index].color;
+          // color = provider.items[widget.index].color;
         });
       },
       child: Container(
-        padding: EdgeInsets.only(top: 20, bottom: 20),
+        padding: EdgeInsets.only(
+          top: 40,
+          bottom: 20,
+        ),
         margin: EdgeInsets.only(left: 20),
         width: 100,
         decoration: BoxDecoration(
           color: active
-              ? color
+              ? widget.color
               : Color.fromRGBO(235, 235, 250, 1).withOpacity(0.5),
           borderRadius: BorderRadius.circular(10),
         ),
@@ -53,10 +58,7 @@ class _SnackListState extends State<SnackList> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset(
-                widget.foodCardimage.snacks[widget.index],
-                width: 50,
-              ),
+              Image.asset(widget.foodCardimage.snacks[widget.index], width: 30),
               Spacer(),
               Text(
                 titles[widget.index],
