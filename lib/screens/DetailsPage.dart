@@ -144,7 +144,9 @@ class _DetailsState extends State<Details> {
                               scrollDirection: Axis.horizontal,
                               itemCount: 6,
                               itemBuilder: (context, index) => SnackList(
-                                  index: index, foodCardimage: widget.foodcard),
+                                  color: widget.foodcard.color,
+                                  index: index,
+                                  foodCardimage: widget.foodcard),
                             ),
                           ),
                         ),
