@@ -49,9 +49,7 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Details(
-                      foodcard: widget.foodCard,
-                    ),
+                    builder: (context) => Details(foodcard: widget.foodCard),
                   ),
                 );
               },
