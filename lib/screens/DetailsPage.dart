@@ -50,7 +50,11 @@ class _DetailsState extends State<Details> {
                   title: Padding(
                     padding: EdgeInsets.only(top: 80),
                     child: SafeArea(
-                        child: Image.asset(widget.foodcard.image, width: 200)),
+                      child: Image.asset(
+                        widget.foodcard.image,
+                        width: 200,
+                      ),
+                    ),
                   ),
                 ),
                 backgroundColor: Colors.transparent,
