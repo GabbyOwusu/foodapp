@@ -41,10 +41,6 @@ class _SnackListState extends State<SnackList> {
         });
       },
       child: Container(
-        padding: EdgeInsets.only(
-          top: 40,
-          bottom: 20,
-        ),
         margin: EdgeInsets.only(left: 20),
         width: 100,
         decoration: BoxDecoration(
@@ -55,17 +51,18 @@ class _SnackListState extends State<SnackList> {
         ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Image.asset(widget.foodCardimage.snacks[widget.index], width: 30),
-              Spacer(),
+              Image.asset(widget.foodCardimage.snacks[widget.index], width: 60),
+              // Spacer(),
               Text(
                 titles[widget.index],
                 style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'SanFransisco',
-                    color: active ? Colors.white : Colors.black,
-                    letterSpacing: 1),
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'SanFransisco',
+                  color: active ? Colors.white : Colors.black,
+                  letterSpacing: 1,
+                ),
               )
             ],
           ),
