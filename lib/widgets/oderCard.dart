@@ -20,7 +20,7 @@ class OrderCard extends StatefulWidget {
 class _OrderCardState extends State<OrderCard> {
   @override
   Widget build(BuildContext context) {
-    //  final provider = Provider.of<CartProvider>(context);
+    ///  final provider = Provider.of<CartProvider>(context);
     return Container(
       height: 100,
       child: ListTile(
@@ -34,11 +34,10 @@ class _OrderCardState extends State<OrderCard> {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
         ),
         trailing: IconButton(
-            icon: Icon(Icons.remove_circle_outline),
-            color: Colors.red,
-            onPressed: () {
-              widget.onDelete();
-            }),
+          icon: Icon(Icons.remove_circle_outline),
+          color: Colors.red,
+          onPressed: widget.onDelete,
+        ),
       ),
     );
 
