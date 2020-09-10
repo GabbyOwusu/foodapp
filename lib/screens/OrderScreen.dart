@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/models/FoodCarouselModel.dart';
+import 'package:order_food/models/Order.dart';
 import 'package:order_food/providers/CartProvider.dart';
 import 'package:order_food/screens/Done.dart';
 import 'package:order_food/widgets/OderCard.dart';
@@ -15,6 +16,7 @@ class OderScreen extends StatefulWidget {
 }
 
 class _OderScreenState extends State<OderScreen> {
+  Order order = Order();
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<CartProvider>(context);
