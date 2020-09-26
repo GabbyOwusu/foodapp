@@ -16,7 +16,13 @@ class OderScreen extends StatefulWidget {
 }
 
 class _OderScreenState extends State<OderScreen> {
-  Order order = Order();
+  Order order;
+  @override
+  void initState() {
+    order = Order();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<CartProvider>(context);
@@ -48,6 +54,7 @@ class _OderScreenState extends State<OderScreen> {
                   fontFamily: 'SanFransisco',
                 ),
               ),
+              SizedBox(height: 20),
               if (provider.orders.isNotEmpty)
                 Container(
                   child: ListView(
@@ -55,18 +62,28 @@ class _OderScreenState extends State<OderScreen> {
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
                     children: <Widget>[
-                      ...provider.orders.map((e) {
+                      ...List.generate(provider.orders.length, (index) {
                         return OrderCard(
-                            foodTitle: widget.name,
-                            onDelete: () {
-                              setState(() {
-                                Provider.of<CartProvider>(context,
-                                        listen: false)
-                                    .removeOrder(e);
-                              });
-                            },
-                            order: e);
-                      }).toList(),
+                          index: index,
+                          foodTitle: widget.name,
+                          onDelete: () {
+                            provider.removeOrder(provider.orders[index]);
+                          },
+                          order: provider.orders[index],
+                        );
+                      })
+                      // ...provider.orders.map((e) {
+                      //   return OrderCard(
+                      //       foodTitle: widget.name,
+                      //       onDelete: () {
+                      //         setState(() {
+                      //           Provider.of<CartProvider>(context,
+                      //                   listen: false)
+                      //               .removeOrder(e);
+                      //         });
+                      //       },
+                      //       order: e);
+                      // }).toList(),
                     ],
                   ),
                 )
