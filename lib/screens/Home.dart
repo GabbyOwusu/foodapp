@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
+import 'package:order_food/screens/DetailsPage.dart';
 import 'package:order_food/widgets/FoodCarosel.dart';
 import 'package:provider/provider.dart';
 
@@ -84,43 +85,54 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Container(
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                          color: Colors.white.withOpacity(0.5), width: 2)),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'ASAP',
-                          style: TextStyle(
-                              fontSize: 20,
+            GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) =>
+                //         Details(foodcard: provider.items[wiindex]),
+                //   ),
+                // );
+              },
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(
+                            color: Colors.white.withOpacity(0.5), width: 2)),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'ASAP',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          IconButton(
+                              icon: Icon(Icons.arrow_forward),
                               color: Colors.white,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        IconButton(
-                            icon: Icon(Icons.arrow_forward),
-                            color: Colors.white,
-                            iconSize: 20,
-                            onPressed: () {}),
-                        Text(
-                          'Work',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
+                              iconSize: 20,
+                              onPressed: () {}),
+                          Text(
+                            'Work',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
