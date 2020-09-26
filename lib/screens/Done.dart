@@ -71,11 +71,12 @@ class _DoneState extends State<Done> {
                               height: 160,
                               width: 160,
                               child: CircularProgressIndicator(
-                                  backgroundColor:
-                                      Colors.white.withOpacity(0.5),
-                                  valueColor:
-                                      AlwaysStoppedAnimation(Colors.white),
-                                  strokeWidth: 7),
+                                // backgroundColor:
+                                //     Colors.white.withOpacity(0.5),
+                                valueColor:
+                                    AlwaysStoppedAnimation(Colors.white),
+                                strokeWidth: 7,
+                              ),
                             ),
                             Positioned(
                               top: 36,
