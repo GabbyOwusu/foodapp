@@ -155,7 +155,7 @@ class _DetailsState extends State<Details> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20, top: 30),
+                            padding: EdgeInsets.only(left: 20, top: 40),
                             child: Text(
                               'Breakfast Value Meals',
                               style: TextStyle(
@@ -163,7 +163,7 @@ class _DetailsState extends State<Details> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 50),
+                        SizedBox(height: 20),
                         Padding(
                           padding: EdgeInsets.only(left: 10, right: 10),
                           child: GridView.builder(
