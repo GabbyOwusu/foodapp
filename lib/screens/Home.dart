@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/providers/FoodCarouselProvider.dart';
-import 'package:order_food/screens/DetailsPage.dart';
 import 'package:order_food/widgets/FoodCarosel.dart';
 import 'package:provider/provider.dart';
 
