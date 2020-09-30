@@ -12,7 +12,7 @@ class CartProvider extends BaseProvider {
   }
 
   void removeOrder(Order order) {
-    _orderList.removeWhere((o) => o == order);
+    _orderList.indexWhere((o) => o == order);
     notifyListeners();
   }
 
