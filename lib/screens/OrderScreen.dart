@@ -28,8 +28,13 @@ class _OderScreenState extends State<OderScreen> {
     final provider = Provider.of<CartProvider>(context);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        title: Text(
+          'Cart',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
@@ -56,37 +61,16 @@ class _OderScreenState extends State<OderScreen> {
               ),
               SizedBox(height: 20),
               if (provider.orders.isNotEmpty)
-                Container(
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    children: <Widget>[
-                      ...List.generate(provider.orders.length, (index) {
-                        return OrderCard(
-                          index: index,
-                          foodTitle: widget.name,
-                          onDelete: () {
-                            provider.removeOrder(provider.orders[index]);
-                          },
-                          order: provider.orders[index],
-                        );
-                      })
-                      // ...provider.orders.map((e) {
-                      //   return OrderCard(
-                      //       foodTitle: widget.name,
-                      //       onDelete: () {
-                      //         setState(() {
-                      //           Provider.of<CartProvider>(context,
-                      //                   listen: false)
-                      //               .removeOrder(e);
-                      //         });
-                      //       },
-                      //       order: e);
-                      // }).toList(),
-                    ],
-                  ),
-                )
+                ...List.generate(provider.orders.length, (index) {
+                  return OrderCard(
+                    index: index,
+                    foodTitle: widget.name,
+                    onDelete: () {
+                      provider.removeOrder(provider.orders[index]);
+                    },
+                    order: provider.orders[index],
+                  );
+                })
               else
                 Center(
                   child: Container(
