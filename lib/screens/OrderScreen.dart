@@ -236,6 +236,7 @@ class _OderScreenState extends State<OderScreen> {
                     builder: (context) => Done(),
                   ),
                 );
+                provider.clearAll();
               },
               child: Container(
                 margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
