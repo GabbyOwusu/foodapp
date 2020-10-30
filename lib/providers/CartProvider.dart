@@ -21,4 +21,9 @@ class CartProvider extends BaseProvider {
     _orderList[index] = newOrder;
     notifyListeners();
   }
+
+  void clearAll() {
+    orders.clear();
+    notifyListeners();
+  }
 }
