@@ -4,6 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
+## Preview
+
+![ScreenShot](https://github.com/GabbyOwusu/foodapp/blob/master/images/Screenshot%20(10).png)
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
