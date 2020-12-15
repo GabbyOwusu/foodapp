@@ -57,10 +57,12 @@ class _FoodCarouselState extends State<FoodCarousel> {
                 padding: EdgeInsets.all(20),
                 height: 800,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20))),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
                 child: Column(
                   children: <Widget>[
                     Container(
