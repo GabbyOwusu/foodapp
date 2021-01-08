@@ -2,8 +2,6 @@
 
 A new Flutter project.
 
-## Getting Started
-
 ## Preview
 
 ![ScreenShot](https://github.com/GabbyOwusu/foodapp/blob/master/images/Screenshot%20(10).png)
