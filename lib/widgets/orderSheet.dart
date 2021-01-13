@@ -150,8 +150,8 @@ class _OrderSheetState extends State<OrderSheet> {
                 onTap: () {
                   setState(() {
                     addtoCart = true;
-                    provider.addOrder(order);
                   });
+                  provider.addOrder(order);
                   Navigator.pop(context);
                 },
                 child: Container(
