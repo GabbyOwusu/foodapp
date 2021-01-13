@@ -16,17 +16,14 @@ class OderScreen extends StatefulWidget {
 }
 
 class _OderScreenState extends State<OderScreen> {
-  Order order;
-  @override
-  void initState() {
-    order = Order();
-    super.initState();
+  Order order = Order();
+
+  CartProvider get provider {
+    return Provider.of<CartProvider>(context, listen: false);
   }
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<CartProvider>(context);
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -66,7 +63,8 @@ class _OderScreenState extends State<OderScreen> {
                     index: index,
                     foodTitle: widget.name,
                     onDelete: () {
-                      provider.removeOrder(provider.orders[index]);
+                      provider.deleteOrder(provider.orders[index]);
+                      setState(() {});
                     },
                     order: provider.orders[index],
                   );
@@ -154,9 +152,10 @@ class _OderScreenState extends State<OderScreen> {
                       Text(
                         'AED 0',
                         style: TextStyle(
-                            fontFamily: 'SanFransisco',
-                            fontSize: 17,
-                            color: Colors.lightGreen),
+                          fontFamily: 'SanFransisco',
+                          fontSize: 17,
+                          color: Colors.lightGreen,
+                        ),
                       ),
                     ],
                   )
