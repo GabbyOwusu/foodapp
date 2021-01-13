@@ -6,8 +6,8 @@ class OrderCard extends StatefulWidget {
   final FoodCard foodTitle;
   final Order order;
   final int index;
+  final Function onDelete;
 
-  final VoidCallback onDelete;
   OrderCard({
     @required this.foodTitle,
     @required this.index,
@@ -25,7 +25,10 @@ class _OrderCardState extends State<OrderCard> {
     return Container(
       height: 100,
       child: ListTile(
-        leading: Image.asset(widget.order.food.menu[widget.index], width: 60),
+        leading: Image.asset(
+          widget.order.food.menu[widget.index],
+          width: 60,
+        ),
         title: Text(
           widget.order.food.foodName[widget.index],
           style: TextStyle(
