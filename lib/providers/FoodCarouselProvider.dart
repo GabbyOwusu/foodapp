@@ -176,6 +176,34 @@ class CardProvider extends BaseProvider {
             'images/burger4.png',
             'images/burger5.png',
           ]),
+      FoodCard(
+          description: 'Burgers, American',
+          color: Colors.black,
+          title: 'Shake Shack',
+          headingImage: 'images/shake.png',
+          image: 'images/burger.png',
+          foodName: [
+            'Normal burger',
+            'Two beef burger',
+            'Small Size',
+            'Large ',
+            'Extra Large Pizza',
+          ],
+          snacks: [
+            'images/burger5.png',
+            'images/burger3.png',
+            'images/burger1.png',
+            'images/burger5.png',
+            'images/burger2.png',
+            'images/burger5.png',
+          ],
+          menu: [
+            'images/burger1.png',
+            'images/burger2.png',
+            'images/burger3.png',
+            'images/burger4.png',
+            'images/burger5.png',
+          ]),
     ];
   }
 }
